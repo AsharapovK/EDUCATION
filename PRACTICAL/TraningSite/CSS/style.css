@@ -1,0 +1,30 @@
+
+        .head {
+            background-color: cadetblue;
+            height: 50px;
+        }
+
+        .content {
+            background-color: aquamarine;
+        }
+
+        .menu {
+            float: left;
+            background-color: chartreuse;
+            width: 200px;
+            height: 500px;
+
+        }
+
+        .banner {
+            float: right;
+            background-color: chocolate;
+            width: 200px;
+            height: 500px;
+
+        }
+
+        .footer {
+            background-color: darkgrey;
+            height: 50px
+        }
