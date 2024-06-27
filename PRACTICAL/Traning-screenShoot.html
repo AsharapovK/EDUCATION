@@ -5,19 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traning-ScreenShoot</title>
+
+    <style>
+        body>div>ul>li {
+            color: RED;
+        }
+
+        body>div>ul>li>span {
+            color: green;
+        }
+
+        body>div>ul>li>em {
+            color: blue;
+        }
+
+        body>div>p>em {
+            color: yellow;
+        }
+
+        body>div>span>em {
+            color: black;
+        }
+
+        body>ul>li:first-child {
+            color: orange;
+        }
+
+        body>ul>li>span {
+            color: rosybrown;
+        }
+
+        body>ul>li>em {
+            color: violet;
+        }
+
+        body>ul>li>div>ul {
+            color: indigo
+        }
+
+        body>ul>li>div>ul>li>em {
+            color: chocolate
+        }
+
+        body>ul>li>div>ul>li>span {
+            color: brown
+        }
+
+        body>ul>li>div>p {
+            color: white
+        }
+
+        body>p>em {
+            color: gray
+        }
+    </style>
+
 </head>
 
 <body>
-
     <div>
         <ul>
             <li><a>RED</a></li>
-            <li><a>GREEN</a></li>
-            <li><a>BLUE</a></li>
+            <li><span><a>GREEN</a></span></li>
+            <li><em><a>BLUE</a></em></li>
         </ul>
-
+        <p><em><a>YELLOW</a></em></p>
+        <span><em><a>BLACK</a></em></span>
     </div>
 
+    <ul>
+        <li><a>ORANGE</a>
+            <span><a>ROSE</a></span>
+            <em><a>VIOLET</a></em>
+        </li>
+        <li>
+            <p><em><a>AQUA</a></em></p>
+        </li>
+        <li>
+            <div>
+                <ul>
+                    <li><a>INDIGO</a></li>
+                    <li><em><a>CHOCOLATE</a></em></li>
+                    <li><span><a>BROWN</a></span></li>
+                </ul>
+                <p><a>WHITE</a></p>
+            </div>
+        </li>
+    </ul>
+    <p><em><a>GRAY</a></em></p>
 </body>
 
 </html>
