@@ -1,0 +1,89 @@
+//Переменные
+$baseBackground: #ed7b49; // Основной цвет фона
+$whiteText: #ffffff; // Цвет текста
+
+//Стили
+.topBanner {
+  display: flex;
+  justify-content: center;
+  line-height: 35px;
+  p {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: $whiteText;
+    width: 1440px;
+  }
+}
+
+.desktop {
+  background-image: url("../img/Frame.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 797px;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+
+  .conteiner {
+    width: 1110px;
+
+    > div {
+      width: 1110px;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        width: 415px;
+        height: 87px;
+        display: inline; /* Отображать как строчный элемент */
+        padding-left: 20px;
+      }
+      .logo {
+        position: relative;
+        right: 50px;
+      }
+    }
+    .imgDown {
+      position: absolute;
+      top: 82.4%;
+    }
+  }
+
+  .lang {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    left: 110px;
+  }
+}
+
+.imgDown {
+  position: relative;
+  top: -50px;
+  left: 50%;
+}
+
+.cookies {
+  position: absolute;
+  bottom: 15%;
+  right: 150px;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  width: 392px;
+  height: 57px;
+  border-radius: 78px;
+  color: $whiteText;
+  line-height: 57px;
+  span {
+    padding-left: 30px;
+  }
+  button {
+    background-color: #f5afb9;
+    color: black;
+    width: 62px;
+    height: 35px;
+    border-radius: 17.5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

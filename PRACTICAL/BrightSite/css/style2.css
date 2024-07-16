@@ -1,0 +1,87 @@
+@charset "UTF-8";
+.topBanner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 35px; }
+  .topBanner p {
+    text-align: center;
+    background-color: black;
+    color: #ffffff;
+    width: 1440px; }
+
+.desktop {
+  background-image: url("../img/Frame.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 797px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 25px; }
+  .desktop .conteiner {
+    width: 1110px; }
+    .desktop .conteiner > div {
+      width: 1110px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .desktop .conteiner > div li {
+        width: 415px;
+        height: 87px;
+        display: inline;
+        /* Отображать как строчный элемент */
+        padding-left: 20px; }
+      .desktop .conteiner > div .logo {
+        position: relative;
+        right: 50px; }
+    .desktop .conteiner .imgDown {
+      position: absolute;
+      top: 82.4%; }
+  .desktop .lang {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    position: relative;
+    left: 110px; }
+
+.imgDown {
+  position: relative;
+  top: -50px;
+  left: 50%; }
+
+.cookies {
+  position: absolute;
+  bottom: 15%;
+  right: 150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 392px;
+  height: 57px;
+  border-radius: 78px;
+  color: #ffffff;
+  line-height: 57px; }
+  .cookies span {
+    padding-left: 30px; }
+  .cookies button {
+    background-color: #f5afb9;
+    color: black;
+    width: 62px;
+    height: 35px;
+    border-radius: 17.5px;
+    position: absolute;
+    right: 10px;
+    top: 10px; }
+
+/*# sourceMappingURL=style2.css.map */
