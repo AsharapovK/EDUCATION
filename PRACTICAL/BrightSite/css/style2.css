@@ -1,21 +1,14 @@
 @charset "UTF-8";
 .topBanner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   line-height: 35px; }
   .topBanner p {
     text-align: center;
     background-color: black;
-    color: #ffffff;
-    width: 1440px; }
+    color: #ffffff; }
 
 .desktop {
   background-image: url("../img/Frame.png");
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center top;
   height: 797px;
   display: -webkit-box;
@@ -26,7 +19,8 @@
           justify-content: center;
   padding-top: 25px; }
   .desktop .conteiner {
-    width: 1110px; }
+    width: 1110px;
+    position: relative; }
     .desktop .conteiner > div {
       width: 1110px;
       display: -webkit-box;
@@ -46,7 +40,8 @@
         right: 50px; }
     .desktop .conteiner .imgDown {
       position: absolute;
-      top: 82.4%; }
+      bottom: 3px;
+      left: 50%; }
   .desktop .lang {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -57,15 +52,21 @@
     position: relative;
     left: 110px; }
 
-.imgDown {
-  position: relative;
-  top: -50px;
-  left: 50%; }
+.title {
+  width: 900px;
+  height: 93px; }
+  .title h1 {
+    margin: auto auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 93.5px;
+    text-align: center; }
 
 .cookies {
   position: absolute;
-  bottom: 15%;
-  right: 150px;
+  bottom: 60px;
+  left: 68%;
   background-color: rgba(0, 0, 0, 0.7);
   width: 392px;
   height: 57px;
@@ -83,5 +84,206 @@
     position: absolute;
     right: 10px;
     top: 10px; }
+
+.desktop2 {
+  background-color: #ed7b49;
+  height: 3452px;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.WildlyLover {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .WildlyLover div {
+    width: 506px;
+    padding-top: 72px; }
+  .WildlyLover img {
+    padding-right: 150px; }
+  .WildlyLover h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 85px;
+    line-height: 93.5px;
+    text-align: left; }
+  .WildlyLover p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 24px; }
+
+.Carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .Carousel div:nth-child(1) {
+    width: 360px;
+    height: 350px;
+    margin: 130px 30.5px 0px; }
+    .Carousel div:nth-child(1) div {
+      background-color: #72a080;
+      height: 525px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      border-radius: 275px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: end;
+      position: relative; }
+    .Carousel div:nth-child(1) h2 {
+      position: relative;
+      bottom: 30px;
+      font-size: 36px;
+      line-height: 42.12px; }
+    .Carousel div:nth-child(1) p {
+      position: relative;
+      bottom: 30px;
+      font-size: 21px;
+      line-height: 31.5px;
+      margin-left: 30.5px; }
+    .Carousel div:nth-child(1) button {
+      position: relative;
+      bottom: 10px;
+      left: 13.5px;
+      margin-left: 30.5px;
+      background-color: #72a080;
+      width: 182px;
+      height: 47px;
+      border-radius: 36px; }
+  .Carousel div:nth-child(2) {
+    width: 360px;
+    height: 350px;
+    margin: 0px 30.5px 0px; }
+    .Carousel div:nth-child(2) div {
+      background-color: #a95d50;
+      height: 525px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      border-radius: 275px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: end;
+      position: relative; }
+    .Carousel div:nth-child(2) h2 {
+      position: relative;
+      bottom: 30px;
+      font-size: 36px;
+      line-height: 42.12px; }
+    .Carousel div:nth-child(2) p {
+      position: relative;
+      bottom: 30px;
+      font-size: 21px;
+      line-height: 31.5px;
+      margin-left: 30.5px; }
+    .Carousel div:nth-child(2) button {
+      position: relative;
+      bottom: 10px;
+      left: 13.5px;
+      margin-left: 30.5px;
+      background-color: #a95d50;
+      width: 182px;
+      height: 47px;
+      border-radius: 36px; }
+  .Carousel div:nth-child(3) {
+    width: 360px;
+    height: 350px;
+    margin: 130px 30.5px 0px; }
+    .Carousel div:nth-child(3) div {
+      background-color: #abafd6;
+      height: 525px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      border-radius: 275px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: end;
+      position: relative; }
+    .Carousel div:nth-child(3) h2 {
+      position: relative;
+      bottom: 30px;
+      font-size: 36px;
+      line-height: 42.12px; }
+    .Carousel div:nth-child(3) p {
+      position: relative;
+      bottom: 30px;
+      font-size: 21px;
+      line-height: 31.5px;
+      margin-left: 30.5px; }
+    .Carousel div:nth-child(3) button {
+      position: relative;
+      bottom: 10px;
+      left: 13.5px;
+      margin-left: 30.5px;
+      background-color: #abafd6;
+      width: 182px;
+      height: 47px;
+      border-radius: 36px; }
+  .Carousel div:nth-child(4) {
+    width: 360px;
+    height: 350px;
+    margin: 0px 30.5px 0px; }
+    .Carousel div:nth-child(4) div {
+      background-color: #fecf6b;
+      height: 525px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      border-radius: 275px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: end;
+      position: relative; }
+    .Carousel div:nth-child(4) h2 {
+      position: relative;
+      bottom: 30px;
+      font-size: 36px;
+      line-height: 42.12px; }
+    .Carousel div:nth-child(4) p {
+      position: relative;
+      bottom: 30px;
+      font-size: 21px;
+      line-height: 31.5px;
+      margin-left: 30.5px; }
+    .Carousel div:nth-child(4) button {
+      position: relative;
+      bottom: 10px;
+      left: 13.5px;
+      margin-left: 30.5px;
+      background-color: #fecf6b;
+      width: 182px;
+      height: 47px;
+      border-radius: 36px; }
 
 /*# sourceMappingURL=style2.css.map */

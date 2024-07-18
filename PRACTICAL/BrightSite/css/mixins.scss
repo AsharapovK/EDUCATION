@@ -1,0 +1,39 @@
+@mixin items($color) {
+  div {
+    background-color: $color;
+    height: 525px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    border-radius: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+  }
+
+  h2 {
+    position: relative;
+    bottom: 30px;
+    font-size: 36px;
+    line-height: 42.12px;
+  }
+
+  p {
+    position: relative;
+    bottom: 30px;
+    font-size: 21px;
+    line-height: 31.5px;
+    margin-left: 30.5px;
+  }
+
+  button {
+    position: relative;
+    bottom: 10px;
+    left: 13.5px;
+    margin-left: 30.5px;
+    background-color: $color;
+    width: 182px;
+    height: 47px;
+    border-radius: 36px;
+  }
+}

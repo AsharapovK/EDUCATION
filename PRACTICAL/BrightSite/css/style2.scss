@@ -2,22 +2,25 @@
 $baseBackground: #ed7b49; // Основной цвет фона
 $whiteText: #ffffff; // Цвет текста
 
+@import "mixins.scss";
+
 //Стили
 .topBanner {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   line-height: 35px;
   p {
     text-align: center;
     background-color: rgb(0, 0, 0);
     color: $whiteText;
-    width: 1440px;
+    // width: 100%;
   }
 }
 
 .desktop {
   background-image: url("../img/Frame.png");
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-repeat: no-repeat;
   background-position: center top;
   height: 797px;
   display: flex;
@@ -26,6 +29,7 @@ $whiteText: #ffffff; // Цвет текста
 
   .conteiner {
     width: 1110px;
+    position: relative;
 
     > div {
       width: 1110px;
@@ -45,7 +49,8 @@ $whiteText: #ffffff; // Цвет текста
     }
     .imgDown {
       position: absolute;
-      top: 82.4%;
+      bottom: 3px;
+      left: 50%;
     }
   }
 
@@ -57,16 +62,23 @@ $whiteText: #ffffff; // Цвет текста
   }
 }
 
-.imgDown {
-  position: relative;
-  top: -50px;
-  left: 50%;
+.title {
+  width: 900px;
+  height: 93px;
+  h1 {
+    margin: auto auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 93.5px;
+    text-align: center;
+  }
 }
 
 .cookies {
   position: absolute;
-  bottom: 15%;
-  right: 150px;
+  bottom: 60px;
+  left: 68%;
   background-color: hsla(0, 0%, 0%, 0.7);
   width: 392px;
   height: 57px;
@@ -85,5 +97,72 @@ $whiteText: #ffffff; // Цвет текста
     position: absolute;
     right: 10px;
     top: 10px;
+  }
+}
+
+.desktop2 {
+  background-color: $baseBackground;
+  height: 3452px;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.WildlyLover {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 506px;
+    padding-top: 72px;
+  }
+
+  img {
+    padding-right: 150px;
+  }
+
+  h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 85px;
+    line-height: 93.5px;
+    text-align: left;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.Carousel {
+  display: flex;
+  // justify-content: space-between;
+  div:nth-child(1) {
+    width: 360px;
+    height: 350px;
+    margin: 130px 30.5px 0px;
+    @include items(#72a080);
+  }
+  div:nth-child(2) {
+    width: 360px;
+    height: 350px;
+    margin: 0px 30.5px 0px;
+    @include items(#a95d50);
+  }
+  div:nth-child(3) {
+    width: 360px;
+    height: 350px;
+    margin: 130px 30.5px 0px;
+    @include items(#abafd6);
+  }
+  div:nth-child(4) {
+    width: 360px;
+    height: 350px;
+    margin: 0px 30.5px 0px;
+    @include items(#fecf6b);
   }
 }
