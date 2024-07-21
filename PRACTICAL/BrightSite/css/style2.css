@@ -8,9 +8,13 @@
 
 .desktop {
   background-image: url("../img/Frame.png");
-  background-attachment: fixed;
-  background-position: center top;
-  height: 797px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 95vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
