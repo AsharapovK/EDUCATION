@@ -1,0 +1,43 @@
+.conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .conteiner h1 {
+    font-size: 36px;
+    line-height: 42.12px; }
+  .conteiner div > label {
+    display: inline-block;
+    user-select: none;
+    width: 150px;
+    height: 80px;
+    background-image: url("../img/btn_night.png");
+    background-size: contain;
+    border-radius: 40px;
+    position: relative;
+    transition: 1s; }
+  .conteiner label::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-image: url("../img/bnt_sw_night2.png");
+    background-size: contain;
+    background-color: azure;
+    top: 5px;
+    left: 5px;
+    transition: 1s; }
+
+input:checked + label {
+  background-image: url("../img/btn_day.png");
+  background-size: contain; }
+
+input:checked + label::before {
+  content: "";
+  background-image: url("../img/bnt_sw_day2.png");
+  background-size: contain;
+  left: 75px;
+  transition: 1s; }
+
+/*# sourceMappingURL=sw_btn_style.css.map */
