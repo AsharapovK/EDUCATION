@@ -118,6 +118,14 @@
     font-weight: 400;
     line-height: 24px; }
 
+.CarouselCentr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
 .Carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,5 +294,36 @@
       width: 182px;
       height: 47px;
       border-radius: 36px; }
+
+.pictureBlock {
+  margin-top: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .pictureBlock div {
+    width: 1140px;
+    height: 710px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .pictureBlock div div {
+      width: 475px;
+      height: 368px; }
+      .pictureBlock div div h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 85px;
+        line-height: 93.5px;
+        text-align: left; }
+      .pictureBlock div div p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 24px; }
 
 /*# sourceMappingURL=style2.css.map */

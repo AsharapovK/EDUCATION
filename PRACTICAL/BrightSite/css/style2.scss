@@ -21,12 +21,11 @@ $whiteText: #ffffff; // Цвет текста
   background-repeat: no-repeat;
   background-position: center center;
   height: 95vh;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 25px;
-
 
   .conteiner {
     width: 1110px;
@@ -136,6 +135,13 @@ $whiteText: #ffffff; // Цвет текста
   }
 }
 
+//Центрируем карусель посередине
+.CarouselCentr {
+  display: flex;
+  justify-content: center;
+}
+
+//Карусель продуктов
 .Carousel {
   display: flex;
   // justify-content: space-between;
@@ -162,5 +168,33 @@ $whiteText: #ffffff; // Цвет текста
     height: 350px;
     margin: 0px 30.5px 0px;
     @include items(#fecf6b);
+  }
+}
+
+.pictureBlock {
+  margin-top: 750px;
+  display: flex;
+  justify-content: center;
+  div {
+    width: 1140px;
+    height: 710px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      width: 475px;
+      height: 368px;
+      h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 85px;
+        line-height: 93.5px;
+        text-align: left;
+      }
+      p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
   }
 }
