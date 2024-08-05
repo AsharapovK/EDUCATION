@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKETA</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        let firstName = prompt("Как вас зовут?");
+        let lastName = prompt("Какая ваша фамилия?");
+        let middleName = prompt("Какое ваше отчество?");
+        let age = +prompt("Сколько вам лет?");
+        let sex = confirm("Ваш пол мужской?");
+
+        let pension = 'Нет'
+        // debugger
+        sex === true && age >= 63 ? pension = "Да" : ''
+        sex === false && age >= 58 ? pension = "Да" : ''
+        sex = sex === true ? "мужской" : "женский"
+
+        let fullName =
+            `ваше ФИО: ${lastName} ${firstName} ${middleName}
+ваш возраст в годах: ${age}
+ваш возраст в днях: ${age * 365}
+через 5 леть вам будет: ${age + 5}
+ваш пол: ${sex}
+вы на пенсии: ${pension}`
+
+        alert(fullName)
+
+        document.getElementById("result").innerText = fullName
+
+    </script>
+
+</body>
+
+</html>
