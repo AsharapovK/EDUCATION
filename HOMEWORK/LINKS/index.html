@@ -15,46 +15,88 @@
         * {
             padding: 0;
             margin: 0;
-        }
+            box-sizing: border-box;
+            margin: 5px 0px 5px 5px;
 
-        .Method1 {
-            >div {
-                width: 100px;
-                height: 50px;
-                line-height: 50px;
-                text-align: center;
-                color: green;
-                padding: 0px 10px 0px 10px;
-                text-transform: lowercase;
-                display: inline;
+            :hover {
+                color: brown;
             }
-            
         }
 
-        .Method2 {
+        /* Объявляем всем div - display:inline и убираем из последнего блока правый border */
+        .Method1 {
+            div:last-of-type {
+                border-right: none
+            }
+
             >div {
+                display: inline;
+                /* line-height: 50px; */
+                text-align: center;
+                padding: 0px 10px;
+                text-transform: lowercase;
+                border-right: 3px solid red;
+            }
+        }
+
+        /* Объявляем всем div - float:left и убираем из первого блока левый border */
+        .Method2 {
+            div:first-of-type {
+                border-left: none
+            }
+
+            >div {
+                height: 18.5px;
+                line-height: 18.5px;
                 padding: 0px 10px 0px 10px;
                 text-transform: lowercase;
-                height: 50px;
-                line-height: 50px;
                 text-align: center;
                 float: left;
+                border-left: 3px solid red;
+            }
+        }
+
+        /* Объявляем всем div - float:left и убираем из первого блока левый border  */
+        .Method3 {
+            display: flex;
+            justify-content: left;
+
+            div:first-of-type {
+                border-left: none;
+            }
+
+            >div {
+                height: 18.5px;
+                line-height: 0.5px;
+                padding: 10px 10px 0px 10px;
+                text-transform: lowercase;
+                text-align: center;
+                border-left: 3px solid red;
 
             }
         }
     </style>
 
     <div class="Method1">
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Первая ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Вторая ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Третья ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Четвертая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Первая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Вторая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Третья ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Четвертая ссылка</a></div>
     </div>
+
     <div class="Method2">
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Первая ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Вторая ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Третья ссылка</a></div>
-        <div class="menu_1_1"><a href="https://www.onliner.by/">Четвертая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Первая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Вторая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Третья ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Четвертая ссылка</a></div>
+    </div>
+    <div style="clear:both"></div>
+
+    <div class=" Method3">
+        <div><a href="https://www.onliner.by/">Первая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Вторая ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Третья ссылка</a></div>
+        <div><a href="https://www.onliner.by/">Четвертая ссылка</a></div>
     </div>
 
 </body>
