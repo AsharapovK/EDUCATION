@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARS</title>
+</head>
+
+<body>
+    <style>
+        .stars {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+
+            .star {
+                width: 100px;
+                height: 100px;
+                background: url(img/star0.png);
+                background-repeat: no-repeat;
+
+                &:hover {
+                    background-image: url(img/star1.png);
+                }
+
+                &:hover~.star {
+                    background-image: url(img/star1.png);
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+    </style>
+
+
+    <div class="stars">
+        <span></span>
+        <span class="star">
+            <p>Звезда1</p>
+        </span>
+        <span class="star">
+            <p>Звезда2</p>
+        </span>
+        <span class="star">
+            <p>Звезда3</p>
+        </span>
+        <span class="star">
+            <p>Звезда4</p>
+        </span>
+        <span class="star">
+            <p>Звезда5</p>
+        </span>
+
+    </div>
+</body>
+
+</html>

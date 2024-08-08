@@ -1,0 +1,36 @@
+* {
+  margin: 0px; }
+
+.headr {
+  background-color: darkturquoise;
+  text-align: center;
+  color: blue;
+  padding: 15px; }
+  .headr p {
+    padding: 0px; }
+
+.menu {
+  width: 160px;
+  background-color: burlywood;
+  padding: 15px; }
+
+.allContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .allContent h3 {
+    text-align: center;
+    font-style: inherit;
+    margin: 15px;
+    font-weight: bold; }
+  .allContent .contentdiv {
+    padding: 20px;
+    background-image: url(../img/ball2.jpeg);
+    background-repeat: repeat-y;
+    background-position: right; }
+    .allContent .contentdiv img {
+      float: left;
+      padding-right: 20px;
+      padding-bottom: 10px; }
+
+/*# sourceMappingURL=style.css.map */

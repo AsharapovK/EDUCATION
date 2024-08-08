@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+}
+
+.headr {
+  background-color: darkturquoise;
+  text-align: center;
+  color: blue;
+  padding: 15px;
+
+  p {
+    padding: 0px;
+  }
+}
+
+.menu {
+  width: 160px;
+  background-color: burlywood;
+  padding: 15px;
+}
+
+.allContent {
+  display: flex;
+
+  h3 {
+    text-align: center;
+    font-style: inherit;
+    margin: 15px;
+    font-weight: bold;
+  }
+
+  .contentdiv {
+    padding: 20px;
+    background-image: url(../img/ball2.jpeg);
+    background-repeat: repeat-y;
+    background-position: right;
+
+    img {
+      float: left;
+      padding-right: 20px;
+      padding-bottom: 10px;
+    }
+  }
+}
