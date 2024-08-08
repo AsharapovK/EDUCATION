@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKET_FORM</title>
+    <link rel="stylesheet" href="../../PRACTICAL/SITE/CSS/reset.css">
+    <link rel="stylesheet" href="../../PRACTICAL/SITE/CSS/normolise.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form class="form1" action="">
+        <div>
+            <div>
+                <p>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</p>
+            </div>
+            <div>Название статьи:</div>
+            <div class="name"><input type="text" name="ArticleTitle">
+            </div>
+            <div>Рублика:</div>
+            <div class="select"><select name="Rublica">
+                    <option value="1" selected>Программирование</option>
+                    <option value="2">Дизайн</option>
+                    <option value="3">Продажи</option>
+                    <option value="4" disabled>Маркетинг</option>
+                </select></div>
+            <div>Публикация:</div>
+            <div class="radio">
+                <input type="radio" name="answer" value="1">на сайте<br>
+                <input type="radio" name="answer" value="2" checked>в журнале<br>
+                <input type="radio" name="answer" value="3">на сайте и в журнале<br>
+            </div>
+            <div class="chkBox">Разрешить комментарии:<input type="checkbox" name="chkbox" id="chkbox"></div>
+            <div>Текст статии:</div>
+            <div class="textArea"><textarea name="" id="" cols="15" rows="2"></textarea></div>
+            <div class="button"><input type="submit" value="Опубликовать"></div>
+        </div>
+    </form>
+
+    <form class="form2" action="">
+        <div class="borderForm2">
+            <div>
+                <p>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</p>
+            </div>
+            <div class="NameDiv">
+                <div>Название статьи:</div>
+                <input type="text" name="ArticleTitle">
+            </div>
+            <div class="RubricaDiv">
+                <div>Рублика:</div>
+                <div class="select"><select name="Rublica">
+                        <option value="1" selected>Программирование</option>
+                        <option value="2">Дизайн</option>
+                        <option value="3">Продажи</option>
+                        <option value="4" disabled>Маркетинг</option>
+                    </select></div>
+            </div>
+
+            <div class="PublicDiv">
+                <div>Публикация:</div>
+                <div class="radio">
+                    <input type="radio" name="answer" value="1">на сайте<br>
+                    <input type="radio" name="answer" value="2" checked>в журнале<br>
+                    <input type="radio" name="answer" value="3">на сайте и в журнале<br>
+                </div>
+            </div>
+
+            <div class="chkBox">Разрешить комментарии:<input type="checkbox" name="chkbox" id="chkbox"></div>
+            <div>Текст статии:</div>
+            <div class="textArea"><textarea name="" id="" cols="15" rows="2"></textarea></div>
+            <div class="button"><input type="submit" value="Опубликовать"></div>
+        </div>
+    </form>
+
+</body>
+
+</html>

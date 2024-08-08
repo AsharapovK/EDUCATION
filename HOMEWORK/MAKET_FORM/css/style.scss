@@ -1,0 +1,151 @@
+* {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+.form1 {
+  width: 300px;
+  border: 3px double red;
+  box-sizing: border-box;
+
+  margin: 25px 0px 25px 25px;
+  padding: 10px;
+  > div > div > p {
+    margin: 10px 0px 15px 0px;
+  }
+  .name {
+    input {
+      width: 270px;
+      height: 20px;
+      border: 1px solid black;
+    }
+    margin: 1px 0px 3px 0px;
+  }
+  .select {
+    select {
+      width: 270px;
+      height: 20px;
+      border: 1px solid black;
+    }
+    margin: 1px 0px 5px 0px;
+  }
+  .radio {
+    margin: 2px 0px 5px 0px;
+  }
+
+  .chkBox {
+    margin: 2px 0px 5px 0px;
+  }
+
+  .textArea {
+    textarea {
+      width: 270px;
+      border: 1px solid black;
+      margin-bottom: 5px;
+    }
+  }
+
+  .button {
+    input {
+      width: 120px;
+      height: 20px;
+      border: 1px solid black;
+      background-color: rgba(238, 234, 242, 0.559);
+      border-radius: 3px;
+    }
+  }
+}
+
+//-------------------
+.form2 {
+  width: 600px;
+  border: 3px double red;
+  box-sizing: border-box;
+  margin: 25px 0px 25px 25px;
+  padding: 10px;
+  > div > div > p {
+    margin: 10px 0px 15px 0px;
+  }
+
+  // Название статьи
+  .NameDiv {
+    display: flex;
+    justify-content: left;
+    div {
+      width: 175px;
+      padding: 0px 3, 5px 3px, 5px;
+    }
+    input {
+      width: 380px;
+      height: 20px;
+      border: 1px solid black;
+    }
+    margin: 1px 0px 3px 0px;
+  }
+
+  // Рублика
+  .RubricaDiv {
+    display: flex;
+    justify-content: left;
+    div {
+      width: 175px;
+      padding: 0px 3, 5px 3px, 5px;
+    }
+    .select {
+      select {
+        width: 270px;
+        height: 20px;
+        border: 1px solid black;
+      }
+      margin: 1px 0px 5px 0px;
+    }
+  }
+
+  // Публикация
+  .PublicDiv {
+    display: flex;
+    justify-content: left;
+    div {
+      width: 175px;
+      padding: 0px 3, 5px 3px, 5px;
+    }
+    .radio {
+      display: flex;
+      justify-content: left;
+      width: 350px;
+      margin: 2px 0px 5px 0px;
+      input {
+        width: 20px;
+        height: 15px;
+      }
+    }
+  }
+
+  // Разрешить комментарии
+  .chkBox {
+    margin: 2px 0px 5px 0px;
+    input {
+      margin-left: 10px;
+    }
+  }
+
+  // Текстовое поле
+  .textArea {
+    textarea {
+      width: 555px;
+      border: 1px solid black;
+      margin-bottom: 5px;
+    }
+  }
+
+  // Опубликовать
+  .button {
+    input {
+      width: 120px;
+      height: 20px;
+      border: 1px solid black;
+      background-color: rgba(238, 234, 242, 0.559);
+      border-radius: 3px;
+    }
+  }
+}
