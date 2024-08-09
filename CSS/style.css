@@ -1,0 +1,36 @@
+* {
+  font-family: "Play", sans-serif;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.703); }
+  * a {
+    padding: 2.5px;
+    text-decoration: none;
+    color: #007bff;
+    text-transform: uppercase; }
+    * a:hover {
+      color: #0056b3; }
+    * a:active {
+      color: #249e36; }
+    * a:visited {
+      color: #6c757d; }
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+h1 {
+  text-align: center; }
+
+.HomeWorkDiv {
+  padding: 15px 25px 0px 10px; }
+  .HomeWorkDiv h2 {
+    font-size: 20px; }
+  .HomeWorkDiv li {
+    padding: 3px 0px 0px 15px; }
+    .HomeWorkDiv li a {
+      font-size: 16px; }
+
+/*# sourceMappingURL=style.css.map */

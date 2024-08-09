@@ -1,0 +1,49 @@
+* {
+  font-family: "Play", sans-serif;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.703);
+
+  a {
+    padding: 2.5px;
+    text-decoration: none;
+    color: #007bff;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #0056b3;
+    }
+
+    &:active {
+      color: #249e36;
+    }
+
+    &:visited {
+      color: #6c757d;
+    }
+  }
+}
+
+.table {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+}
+
+.HomeWorkDiv {
+  padding: 15px 25px 0px 10px;
+
+  h2 {
+    font-size: 20px;
+  }
+
+  li {
+    padding: 3px 0px 0px 15px;
+
+    a {
+      font-size: 16px;
+    }
+  }
+}
