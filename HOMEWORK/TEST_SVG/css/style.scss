@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+path:nth-child(even) {
+  &:hover {
+    fill: red;
+    stroke: whitesmoke;
+    transition: all 1s;
+    transform: translateY(-5px);
+  }
+}
+
+path:nth-child(odd) {
+  &:hover {
+    fill: blue;
+    stroke: whitesmoke;
+    transition: all 1s;
+    transform: translateX(-5px);
+  }
+}
