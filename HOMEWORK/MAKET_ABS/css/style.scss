@@ -1,0 +1,42 @@
+.content {
+  display: flex;
+  justify-content: center;
+  .AllImage {
+    height: 450px;
+    &:hover {
+      .FirstImage {
+        z-index: 0;
+        transition: 0.5s;
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+    }
+  }
+}
+
+.backgroundImage {
+  position: relative;
+
+  img:nth-of-type(1) {
+    top: 50px;
+    left: -100px;
+  }
+  img:nth-of-type(2) {
+    top: 10px;
+    left: 100px;
+  }
+  img:nth-of-type(3) {
+    top: 220px;
+  }
+}
+
+.SecondImage {
+  position: absolute;
+  z-index: 1;
+}
+
+.FirstImage {
+  position: relative;
+  z-index: 2;
+  top: 85px;
+  left: -25px;
+}
