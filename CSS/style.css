@@ -1,6 +1,5 @@
 * {
   font-family: "Play", sans-serif;
-  padding-left: 10px;
   color: rgba(255, 255, 255, 0.825);
   background-color: #2c3e50; }
   * a {
@@ -30,12 +29,12 @@ h1 {
 .HomeWorkDiv {
   border: #6c757d solid 1px;
   border-radius: 4px;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 15px 15px 15px;
   padding: 10px 30px 10px 30px;
   -webkit-transition: all 1s ease;
   transition: all 1s ease; }
   .HomeWorkDiv h2 {
-    font-size: 20px; }
+    font-size: 18px; }
   .HomeWorkDiv li {
     padding: 5px 0px 0px 0px; }
     .HomeWorkDiv li a {
@@ -47,5 +46,37 @@ h1 {
             box-shadow: 0 0 20px #fb6e02;
     -webkit-transform: scale(1.008);
             transform: scale(1.008); }
+
+.table {
+  display: grid;
+  grid-template-columns: 2% 1fr 2% 20% 2%; }
+
+.coll_1 {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.coll_2 {
+  grid-column: 4; }
+
+@media all and (max-width: 1625px) {
+  .HomeWorkDiv {
+    padding: 5px 15px 5px 15px; }
+    .HomeWorkDiv h2 {
+      font-size: 16px; }
+    .HomeWorkDiv li {
+      padding: 0px 0px 0px 0px; }
+      .HomeWorkDiv li a {
+        font-size: 14px; } }
+@media all and (max-width: 1337px) {
+  .table {
+    grid-template-columns: minmax(300px, 1fr) 300px; }
+
+  .coll_1 {
+    grid-template-columns: 1fr;
+    grid-column: 1; }
+
+  .coll_2 {
+    grid-column: 2; } }
 
 /*# sourceMappingURL=style.css.map */
