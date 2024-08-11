@@ -41,6 +41,7 @@ h1 {
     .HomeWorkDiv li a {
       font-size: 16px; }
   .HomeWorkDiv:hover {
+    border-radius: 10px;
     border: #fb6e02 solid 0.5px;
     -webkit-box-shadow: 0 0 20px #fb6e02;
             box-shadow: 0 0 20px #fb6e02;
