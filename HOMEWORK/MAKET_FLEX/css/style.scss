@@ -35,16 +35,15 @@
   .contentdiv2 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 0px 15px 15px 15px;
     .image {
       flex-shrink: 0;
-      width: 220px;
+      width: 350px;
       margin: 0 auto;
-      display: block;
-      img {
-        width: 95%;
-        margin: 0 auto;
-        display: block;
+      > img {
+        width: 100%;
+        padding: 5px;
       }
     }
 
@@ -52,5 +51,18 @@
       text-align: justify;
       flex: 1 1 350px;
     }
+  }
+}
+
+.contentdiv {
+  padding: 20px;
+  background-image: url(../img/ball2.jpeg);
+  background-repeat: repeat-y;
+  background-position: right;
+
+  > img {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 10px;
   }
 }

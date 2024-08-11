@@ -8,14 +8,22 @@
     background-color: white;
     padding: 0;
   }
-  .menu ul li {
-    display: inline-block;
-    list-style-type: none;
-    padding-left: 0;
+  .menu ul {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    li {
+      list-style-type: none;
+    }
+    .menu h4 {
+      display: none;
+      font-weight: bold;
+      padding: 0;
+    }
   }
-  .menu h4 {
-    display: none;
-    font-weight: bold;
-    padding: 0;
-  }
+}
+
+.image {
+  flex-shrink: 1 !important;
 }

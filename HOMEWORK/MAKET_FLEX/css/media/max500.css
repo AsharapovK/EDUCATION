@@ -9,13 +9,25 @@
   .allContent .menu {
     background-color: white;
     padding: 0; }
-  .allContent .menu ul li {
-    display: inline-block;
-    list-style-type: none;
-    padding-left: 0; }
-  .allContent .menu h4 {
-    display: none;
-    font-weight: bold;
-    padding: 0; }
+  .allContent .menu ul {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .allContent .menu ul li {
+      list-style-type: none; }
+    .allContent .menu ul .menu h4 {
+      display: none;
+      font-weight: bold;
+      padding: 0; }
+
+.image {
+  -ms-flex-negative: 1 !important;
+      flex-shrink: 1 !important; }
 
 /*# sourceMappingURL=max500.css.map */

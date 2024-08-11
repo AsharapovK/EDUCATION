@@ -37,21 +37,32 @@
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0px 15px 15px 15px; }
     .allContent .contentdiv2 .image {
       -ms-flex-negative: 0;
           flex-shrink: 0;
-      width: 220px;
-      margin: 0 auto;
-      display: block; }
-      .allContent .contentdiv2 .image img {
-        width: 95%;
-        margin: 0 auto;
-        display: block; }
+      width: 350px;
+      margin: 0 auto; }
+      .allContent .contentdiv2 .image > img {
+        width: 100%;
+        padding: 5px; }
     .allContent .contentdiv2 .text {
       text-align: justify;
       -webkit-box-flex: 1;
           -ms-flex: 1 1 350px;
               flex: 1 1 350px; }
+
+.contentdiv {
+  padding: 20px;
+  background-image: url(../img/ball2.jpeg);
+  background-repeat: repeat-y;
+  background-position: right; }
+  .contentdiv > img {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */
