@@ -1,0 +1,123 @@
+* {
+  font-family: "Play", sans-serif;
+}
+
+.header,
+.footer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: cyan;
+  text-transform: uppercase;
+  height: 50px;
+  padding: 5px;
+}
+
+//Расположение контента (меню + текст)
+.content {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 250px 1fr;
+}
+
+//Меню
+.menu {
+  background-color: rgb(205, 205, 63);
+  padding: 10px;
+  > h4 {
+    // text-align: center;
+    padding: 15px 0px 15px 15px;
+    font-size: medium;
+    font-weight: bold;
+  }
+  li {
+    text-transform: lowercase;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 25px;
+  }
+}
+
+//Текстовка
+.main {
+  > div > h3 {
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  .image_text {
+    display: grid;
+    justify-content: left;
+    grid-template-columns: 350px minmax(400px, 1fr);
+    .image {
+      padding: 10px;
+      grid-column: 1;
+      grid-row: 1;
+
+      img {
+        width: 100%;
+        // height: 100%;
+        object-fit: cover;
+      }
+    }
+    .text {
+      text-align: justify;
+      padding: 0px 10px 0px 10px;
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+}
+
+//Медиа запросы
+@media all and (max-width: 1000px) {
+  .image_text {
+    grid-template-columns: 1fr !important;
+    grid-row: 1fr 1fr !important;
+    .image {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+    }
+    .text {
+      grid-column: 1 !important;
+      grid-row: 2 !important;
+    }
+  }
+}
+
+// //Медиа запросы
+@media all and (max-width: 650px) {
+  .header,
+  .footer {
+    display: none;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    background-color: white;
+    grid-row: 3;
+    > ul li {
+      padding-left: 10px;
+      list-style-type: none;
+      display: inline-block;
+    }
+  }
+}
+
+.main {
+    // padding: 20px;
+    background-image: url(../img/ball2.jpeg);
+    background-repeat: repeat-y;
+    background-position: right;
+  
+    > img {
+      float: left;
+      padding-right: 20px;
+      padding-bottom: 10px;
+    }
+  }
