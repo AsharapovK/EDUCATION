@@ -1,0 +1,21 @@
+.headr {
+  display: none; }
+
+.allContent {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+  .allContent .menu {
+    background-color: white;
+    padding: 0; }
+  .allContent .menu ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0; }
+  .allContent .menu h4 {
+    display: none;
+    font-weight: bold;
+    padding: 0; }
+
+/*# sourceMappingURL=max500.css.map */

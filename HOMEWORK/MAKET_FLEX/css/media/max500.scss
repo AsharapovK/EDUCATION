@@ -1,0 +1,21 @@
+.headr {
+  display: none;
+}
+
+.allContent {
+  flex-direction: column-reverse;
+  .menu {
+    background-color: white;
+    padding: 0;
+  }
+  .menu ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .menu h4 {
+    display: none;
+    font-weight: bold;
+    padding: 0;
+  }
+}

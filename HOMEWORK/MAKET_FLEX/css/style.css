@@ -1,0 +1,57 @@
+.headr {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: cornflowerblue;
+  color: white; }
+
+.allContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start; }
+  .allContent h3 {
+    text-align: center;
+    font-style: inherit;
+    margin: 15px;
+    font-weight: bold; }
+  .allContent .menu {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 230px;
+    background-color: yellowgreen;
+    padding: 15px; }
+    .allContent .menu ul li {
+      list-style-type: square;
+      list-style-position: inside;
+      padding-left: 15px; }
+    .allContent .menu h4 {
+      font-weight: bold;
+      padding: 20px 0px 20px 0px; }
+  .allContent .contentdiv2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0px 15px 15px 15px; }
+    .allContent .contentdiv2 .image {
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      width: 220px;
+      margin: 0 auto;
+      display: block; }
+      .allContent .contentdiv2 .image img {
+        width: 95%;
+        margin: 0 auto;
+        display: block; }
+    .allContent .contentdiv2 .text {
+      text-align: justify;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 1 220px;
+              flex: 1 1 220px; }
+
+/*# sourceMappingURL=style.css.map */

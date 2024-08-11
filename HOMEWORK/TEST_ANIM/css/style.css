@@ -41,7 +41,7 @@
     -webkit-transition: all 2s;
     transition: all 2s; }
     .conteiner .HoverAnimation img {
-      width: 40%; }
+      width: 30%; }
     .conteiner .HoverAnimation:hover {
       -webkit-animation: HoverAnimation 2s 1 forwards, ChangeColor 2s 1 2s forwards;
               animation: HoverAnimation 2s 1 forwards, ChangeColor 2s 1 2s forwards; }
