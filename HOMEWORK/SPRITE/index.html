@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONO_SPRITE</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 45% 1fr 45%;
+            align-items: center;
+
+            .image {
+                margin: 0 auto;
+                grid-column: 2;
+                height: 127px;
+                width: 102px;
+                background: url(img/rabbit3.png) 0px 0px;
+                animation: play 0.9s steps(9) infinite;
+            }
+        }
+
+        @keyframes play {
+            100% {
+                background-position: -918px;
+            }
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="image"></div>
+    </div>
+</body>
+
+</html>
