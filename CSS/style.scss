@@ -61,6 +61,8 @@ h1 {
   }
 }
 
+
+
 .table {
   display: grid;
   grid-template-columns: 2% 1fr 2% 20% 2%;
@@ -106,4 +108,8 @@ h1 {
   .coll_2 {
     grid-column: 2;
   }
+}
+
+.checkmark {
+  font-size: 12px;
 }
