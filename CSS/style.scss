@@ -1,8 +1,10 @@
+:root {
+  --animation-color: #fb6e02;
+}
+
 * {
   font-family: "Play", sans-serif;
-  // padding-left: 10px;
   color: rgba(255, 255, 255, 0.825);
-  background-color: #2c3e50;
 
   a {
     padding: 2.5px;
@@ -25,13 +27,19 @@
   }
 }
 
+body {
+  background-color: #2c3e50;
+  // font-family: "Arial", sans-serif;
+}
+
 .table {
   display: flex;
   justify-content: space-around;
 }
 
-h1 {
+.title {
   text-align: center;
+  margin: 10px;
 }
 
 .HomeWorkDiv {
@@ -39,7 +47,7 @@ h1 {
   border-radius: 4px;
   margin: 15px 15px 15px 15px;
   padding: 10px 30px 10px 30px;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 
   h2 {
     font-size: 18px;
@@ -58,10 +66,9 @@ h1 {
     border: #fb6e02 solid 0.5px;
     box-shadow: 0 0 20px #fb6e02;
     transform: scale(1.008);
+    background-color: hsl(209, 29%, 28%);
   }
 }
-
-
 
 .table {
   display: grid;
@@ -76,6 +83,11 @@ h1 {
 
 .coll_2 {
   grid-column: 4;
+  .coll_2Div {
+    &:hover > :not(:hover) {
+      opacity: 0.5;
+    }
+  }
 }
 
 @media all and (max-width: 1625px) {
@@ -112,4 +124,29 @@ h1 {
 
 .checkmark {
   font-size: 12px;
+}
+
+//Анимация текста
+.text-container {
+  letter-spacing: 3px;
+  font-size: 30px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.hover-text {
+  position: absolute;
+  white-space: nowrap;
+  color: var(--animation-color);
+  width: 223px;
+  inset: 0.1px;
+  border-right: 6px solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.text-container:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(1px 5px 24px var(--animation-color));
 }

@@ -1,7 +1,9 @@
+:root {
+  --animation-color: #fb6e02; }
+
 * {
   font-family: "Play", sans-serif;
-  color: rgba(255, 255, 255, 0.825);
-  background-color: #2c3e50; }
+  color: rgba(255, 255, 255, 0.825); }
   * a {
     padding: 2.5px;
     text-decoration: none;
@@ -16,6 +18,9 @@
     * a:visited {
       color: #6c757d; }
 
+body {
+  background-color: #2c3e50; }
+
 .table {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,16 +28,17 @@
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
-h1 {
-  text-align: center; }
+.title {
+  text-align: center;
+  margin: 10px; }
 
 .HomeWorkDiv {
   border: #6c757d solid 1px;
   border-radius: 4px;
   margin: 15px 15px 15px 15px;
   padding: 10px 30px 10px 30px;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease; }
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
   .HomeWorkDiv h2 {
     font-size: 18px; }
   .HomeWorkDiv li {
@@ -45,7 +51,8 @@ h1 {
     -webkit-box-shadow: 0 0 20px #fb6e02;
             box-shadow: 0 0 20px #fb6e02;
     -webkit-transform: scale(1.008);
-            transform: scale(1.008); }
+            transform: scale(1.008);
+    background-color: #33485c; }
 
 .table {
   display: grid;
@@ -58,6 +65,8 @@ h1 {
 
 .coll_2 {
   grid-column: 4; }
+  .coll_2 .coll_2Div:hover > :not(:hover) {
+    opacity: 0.5; }
 
 @media all and (max-width: 1625px) {
   .HomeWorkDiv {
@@ -80,5 +89,28 @@ h1 {
     grid-column: 2; } }
 .checkmark {
   font-size: 12px; }
+
+.text-container {
+  letter-spacing: 3px;
+  font-size: 30px;
+  position: relative;
+  text-transform: uppercase; }
+
+.hover-text {
+  position: absolute;
+  white-space: nowrap;
+  color: var(--animation-color);
+  width: 223px;
+  inset: 0.1px;
+  border-right: 6px solid var(--animation-color);
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color); }
+
+.text-container:hover .hover-text {
+  width: 100%;
+  -webkit-filter: drop-shadow(1px 5px 24px var(--animation-color));
+          filter: drop-shadow(1px 5px 24px var(--animation-color)); }
 
 /*# sourceMappingURL=style.css.map */
