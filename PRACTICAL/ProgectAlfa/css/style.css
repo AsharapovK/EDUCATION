@@ -1,0 +1,68 @@
+:root {
+  --color-bg: #c9c8c8;
+  --color-text: #9557b4;
+  --gradient: linear-gradient(to right, #4caebc, #4caebc, #79cbd1); }
+
+body {
+  background-color: #f0f0f0; }
+
+.allConteiner {
+  width: 100%; }
+  .allConteiner .headr {
+    background: var(--gradient);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #4caebc;
+    height: 250px;
+    width: 100%;
+    -webkit-box-shadow: 5px 5px 5px #e7e5e5;
+            box-shadow: 5px 5px 5px #e7e5e5; }
+    .allConteiner .headr .menu {
+      display: grid;
+      height: 20%;
+      grid-template-columns: 1fr 150px 150px 150px 150px;
+      grid-row: 1fr;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: end; }
+      .allConteiner .headr .menu a:first-child {
+        text-align: left;
+        font-size: 30px;
+        padding: 0 0 0 50px; }
+      .allConteiner .headr .menu a {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 16px; }
+    .allConteiner .headr .menuInfo {
+      padding-left: 4%;
+      padding-bottom: 0.3%;
+      margin-top: 30px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      background: var(--gradient);
+      border-radius: 20px; }
+      .allConteiner .headr .menuInfo > div {
+        margin: 10px;
+        width: 320px;
+        color: white;
+        border: 1px solid #86cbd0;
+        border-radius: 10px;
+        padding: 5px; }
+        .allConteiner .headr .menuInfo > div h2 {
+          font-size: 24px; }
+        .allConteiner .headr .menuInfo > div p {
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          margin: 10px 10px 10px 0px;
+          font-size: 15px;
+          text-align: justify;
+          color: rgba(255, 255, 255, 0.8); }
+
+/*# sourceMappingURL=style.css.map */
