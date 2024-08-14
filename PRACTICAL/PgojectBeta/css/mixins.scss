@@ -1,0 +1,12 @@
+// Стили для li пунктов меню
+@mixin icon($image) {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/#{$image});
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 14px;
+    vertical-align: middle;
+  }
