@@ -1,0 +1,8 @@
+.contentGrid {
+  grid-column: 4/6;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr 10px);
+  grid-template-rows: repeat(8, 1fr 10px); }
+
+/*# sourceMappingURL=dashboard.css.map */

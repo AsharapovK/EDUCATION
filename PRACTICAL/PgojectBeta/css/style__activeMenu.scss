@@ -1,5 +1,6 @@
 // Подключаем стили для li пунктов меню
-@import "mixins/mixins.css";
+@import "mixins/mixin.scss";
+@import "content/dashboard.scss";
 
 * {
   font-family: Poppins;
@@ -25,6 +26,8 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: $cologBG;
+  transition: all 1s ease;
+
   &.ActiveHideMenu {
     @import url("style__hideMenu.css");
   }
@@ -136,10 +139,10 @@ body {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    // @include items($colorDarkBlueText);
+    @include items($colorDarkBlueText);
 
     &:nth-child(1) {
-      //   @include items($colorAccentBlue);
+      @include items($colorAccentBlue);
     }
   }
 }
@@ -165,7 +168,7 @@ body {
     li {
       display: flex;
       align-items: center;
-      //   @include items($colorDarkBlueText);
+      @include items($colorDarkBlueText);
       margin: 10px 0px 10px 0px;
     }
   }

@@ -1,4 +1,10 @@
-@import url(mixins/mixins.css);
+.contentGrid {
+  grid-column: 4/6;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr 10px);
+  grid-template-rows: repeat(8, 1fr 10px); }
+
 * {
   font-family: Poppins; }
 
@@ -7,7 +13,9 @@ body {
           box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  background-color: #f5f6f8; }
+  background-color: #f5f6f8;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease; }
   body.ActiveHideMenu {
     @import url("style__hideMenu.css"); }
 
@@ -128,7 +136,28 @@ body {
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    cursor: pointer; }
+    .menu li img {
+      margin-right: 14px;
+      width: 20px; }
+    .menu li a {
+      color: #334d6e; }
+      .menu li a:hover {
+        color: #34aff9; }
+      .menu li a:active {
+        color: #388abd; }
+    .menu li:nth-child(1) {
+      cursor: pointer; }
+      .menu li:nth-child(1) img {
+        margin-right: 14px;
+        width: 20px; }
+      .menu li:nth-child(1) a {
+        color: #109cf1; }
+        .menu li:nth-child(1) a:hover {
+          color: #34aff9; }
+        .menu li:nth-child(1) a:active {
+          color: #388abd; }
 
 .borderMeu {
   -webkit-box-sizing: content-box;
@@ -168,6 +197,16 @@ body {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
+      cursor: pointer;
       margin: 10px 0px 10px 0px; }
+      .settings ul li img {
+        margin-right: 14px;
+        width: 20px; }
+      .settings ul li a {
+        color: #334d6e; }
+        .settings ul li a:hover {
+          color: #34aff9; }
+        .settings ul li a:active {
+          color: #388abd; }
 
 /*# sourceMappingURL=style__activeMenu.css.map */

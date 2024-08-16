@@ -2,6 +2,8 @@ $colorAccentBlue: #109cf1;
 $colorBorder: #ebeff2;
 
 body.ActiveHideMenu {
+  background-color: $colorAccentBlue;
+
   .upMenu {
     display: grid;
     grid-template-columns: 68px 1fr 40px 40px;
