@@ -1,0 +1,83 @@
+$colorAccentBlue: #109cf1;
+$colorBorder: #ebeff2;
+
+body.ActiveHideMenu {
+  .upMenu {
+    display: grid;
+    grid-template-columns: 68px 1fr 40px 40px;
+    grid-template-rows: 60px;
+  }
+
+  .logo {
+    grid-column: 1;
+    display: none;
+  }
+
+  .logo_hidden {
+    display: flex;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 17px 0 17px 13px;
+    background-color: white;
+    border-right: 1px solid $colorBorder;
+    border-bottom: 1px solid $colorBorder;
+    filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.225));
+    span {
+      font-weight: 600;
+      font-size: 18px;
+      color: $colorAccentBlue;
+    }
+  }
+
+  .user {
+    grid-column: 1;
+    > div {
+      margin: 24px 11px 0px 11px;
+    }
+  }
+  .profilePhoto {
+    max-width: 46px;
+  }
+
+  .userText {
+    display: none;
+  }
+  .search {
+    grid-column: 2/4;
+  }
+
+  .secondConteiner {
+    grid-template-columns: 68px 36px 1fr 36px 40px;
+  }
+  .leftMenu {
+    grid-column: 1;
+  }
+
+  .menu {
+    ul {
+      width: 20px;
+    }
+    img {
+      margin: 0;
+      width: 20px;
+      height: 20px;
+    }
+    a {
+      display: none;
+    }
+  }
+  .settings {
+    ul {
+      width: 20px;
+    }
+    a {
+      display: none;
+    }
+    img {
+      margin: 0;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
