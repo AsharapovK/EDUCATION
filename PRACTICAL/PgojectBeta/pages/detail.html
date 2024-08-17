@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectBeta dashboard</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/normolise.css">
+    <link rel="stylesheet" href="../css/style__activeMenu.css">
+    <link rel="stylesheet" href="../css/style__hideMenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/content/gridTable.css">
+    <script src="../js/secondScripts.js"></script>
+    <script src="../js/hideMenuTrue.js" defer></script>
+
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<style>
+    .menu li:nth-child(2) p {
+        color: #109cf1;
+    }
+</style>
+
+<body>
+    <div class="firstConteiner">
+        <div class="upMenu">
+            <div class="logo" onclick="followingLink('../index.html')">
+                <span>DASHBOARD CRM</span>
+            </div>
+
+
+            <div class="logo_hidden" onclick="followingLink('../index.html')">
+                <span>CRM</span>
+            </div>
+            <div class="search">
+                <img src="../img/search.svg" alt="search">
+                <p>Google search</p>
+            </div>
+            <img class="notificationImg" src="../img/notification.svg" alt="notification">
+        </div>
+        <div class="secondConteiner">
+            <div class="leftMenu">
+                <div class="user">
+                    <div>
+                        <div>
+                            <img class="profilePhoto" src="../img/profile_photo.jpg" alt="User_foto">
+                        </div>
+                        <div class="userText">
+                            <p>Julia Komleva</p>
+                            <p>info@2sheets.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li onclick="followingLink('../index.html')"><img src="../img/dashboard.svg"
+                                alt="DashboardIcon">
+                            <p>Dashboard</p>
+                        </li>
+                        <li onclick="followingLink('detail.html')"><img src="../img/deals-active.svg" alt="DetailIcon">
+                            <p>Detail</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/tasks.svg" alt="ExportIcon">
+                            <p>Export</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/chat.svg" alt="HelpIcon">
+                            <p>Help</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/contacts.svg" alt="ContactIcon">
+                            <p>Contact</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="borderMeu">
+                    <div class="settings">
+                        <ul>
+                            <li onclick="followingLink('../index.html')"><img src="../img/settings.svg"
+                                    alt="SettingsIcon">
+                                <p>Settings</p>
+                            </li>
+                            <li class="btn" id="toggleLink"><img src="../img/toggle.svg" alt="ToggleIcon">
+                                <p>Toggle sidebar</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="contentGrid" class="contentGrid">
+            </div>
+
+        </div>
+</body>
+<script src="../js/hideMenu.js" defer></script>
+<script src="../js/getBitrix24Data.js" defer></script>
+
+</html>

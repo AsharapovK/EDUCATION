@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitrix24 Data Fetch</title>
+    <style>
+        #contentGrid {
+            display: grid;
+            grid-template-columns: 60px 1fr 100px 100px;
+            /* Количество столбцов */
+            gap: 1px;
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        .grid-header {
+            font-weight: bold;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contentGrid"></div>
+
+    <script>
+        // Базовый URL Bitrix24 + токен
+        var bitrix24URL = 'https://media-led.bitrix24.ru/rest/117/asvfxcowc1veec19';
+        // Метод Bitrix24
+        var methodList = 'crm.deal.list';
+        // Строка выборки
+        var selectStr = 'select[]=ID&select[]=TITLE&select[]=STAGE_ID&select[]=OPPORTUNITY';
+        // Строка фильтрации
+        var filterStr = 'filter[<ID]=15000';
+
+        // Сборка URL для запроса
+        var responsUrl = bitrix24URL + '/' + methodList + '?' + selectStr + '&' + filterStr + '&order[ID]=DESC';
+
+        // Функция кодировки значений < и > в url
+        var codeResponse = responsUrl.replace(/[<>]/g, function (match) {
+            return encodeURIComponent(match);
+        });
+
+        // Выполнение запроса к Bitrix24
+        fetch(codeResponse, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // Вывод данных в виде сетки таблицы
+                displayData(data.result);
+            })
+            .catch(function (error) {
+                console.error('Ошибка при запросе данных:', error);
+            });
+
+        // Упрощенная функция отображения данных
+        function displayData(deals) {
+            var contentGrid = document.getElementById('contentGrid');
+
+            if (deals.length === 0) {
+                contentGrid.innerHTML = '<p>Нет данных для отображения.</p>';
+                return;
+            }
+
+            // Добавление заголовков
+            var headers = ['ID', 'Название', 'Стадия', 'Сумма'];
+            for (var i = 0; i < headers.length; i++) {
+                var headerElement = document.createElement('div');
+                headerElement.className = 'grid-header';
+                headerElement.textContent = headers[i];
+                contentGrid.appendChild(headerElement);
+            }
+
+            // Добавление данных сделок
+            for (var j = 0; j < deals.length; j++) {
+                var deal = deals[j];
+                var dealData = [deal.ID, deal.TITLE, deal.STAGE_ID, deal.OPPORTUNITY];
+                for (var k = 0; k < dealData.length; k++) {
+                    var itemElement = document.createElement('div');
+                    itemElement.className = 'grid-item';
+                    itemElement.textContent = dealData[k];
+                    contentGrid.appendChild(itemElement);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

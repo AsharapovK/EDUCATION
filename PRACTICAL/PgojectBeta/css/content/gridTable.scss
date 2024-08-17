@@ -1,0 +1,68 @@
+$colorAccentBlue: #109cf1;
+$colorYellow: #ffb946;
+$colorRed: #f7685b;
+$colorGreen: #2ed47a;
+$colorPurple: #885af8;
+$colorBlack: #192a3e;
+$colorTableBlack: #323c47;
+$colorTableGray: #707683;
+$colorDarkBlueText: #334d6e;
+$colorGray: #90a0b7;
+$colorIconGray: #c2cfe0;
+$cologBG: #f5f6f8;
+$colorBorder: #ebeff2;
+
+.contentGrid {
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  // gap: 1px;
+}
+
+.grid-header {
+  height: 48px;
+  font-weight: 400;
+  font-size: 13px;
+  color: $colorGray;
+  background-color: white;
+  border-top: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
+  padding: 5px 10px 5px 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.grid-item {
+  font-family: "Play";
+  height: 64px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0.7px 10px 0px 10px;
+
+  text-transform: uppercase;
+  background-color: #fff;
+  color: $colorTableGray;
+  border-bottom: 1px solid $colorBorder;
+
+  display: flex;
+  align-items: center;
+
+  &:nth-child(5n + 3) {
+    font-size: 14px;
+    font-weight: 400;
+    color: $colorBlack;
+  }
+
+  &:nth-child(5n + 5) {
+    display: flex;
+    justify-content: end;
+  }
+
+  &:hover {
+    transition: color 0.2s ease-in;
+    color: $colorAccentBlue;
+  }
+}

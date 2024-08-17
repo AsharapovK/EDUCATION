@@ -2,8 +2,6 @@ $colorAccentBlue: #109cf1;
 $colorBorder: #ebeff2;
 
 body.ActiveHideMenu {
-  background-color: $colorAccentBlue;
-
   .upMenu {
     display: grid;
     grid-template-columns: 68px 1fr 40px 40px;
@@ -16,6 +14,7 @@ body.ActiveHideMenu {
   }
 
   .logo_hidden {
+    cursor: pointer;
     display: flex;
     align-items: center;
     grid-column: 1;
@@ -54,6 +53,7 @@ body.ActiveHideMenu {
   }
   .leftMenu {
     grid-column: 1;
+    width: 68px;
   }
 
   .menu {
@@ -65,7 +65,7 @@ body.ActiveHideMenu {
       width: 20px;
       height: 20px;
     }
-    a {
+    p {
       display: none;
     }
   }
@@ -73,7 +73,7 @@ body.ActiveHideMenu {
     ul {
       width: 20px;
     }
-    a {
+    p {
       display: none;
     }
     img {
@@ -81,5 +81,9 @@ body.ActiveHideMenu {
       width: 20px;
       height: 20px;
     }
+  }
+
+  .contentGrid {
+    grid-column: 3/5;
   }
 }

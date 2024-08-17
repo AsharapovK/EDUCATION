@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/style__hideMenu.css">
     <link rel="stylesheet" href="css/content/dashboard.css">
     <script src="js/hideMenu.js" defer></script>
+    <script src="js/hideMenuTrue.js" defer></script>
+    <script src="js/secondScripts.js"></script>
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -18,13 +21,19 @@
 
 </head>
 
-
+<style>
+    .menu li:nth-child(1) p {
+        color: #109cf1;
+    }
+</style>
 
 <body>
     <div class="firstConteiner">
         <div class="upMenu">
-            <div class="logo"><span>DASHBOARD CRM</span></div>
-            <div class="logo_hidden"><span>CRM</span></div>
+            <div class="logo" onclick="followingLink('index.html')">
+                <span>DASHBOARD CRM</span>
+            </div>
+            <div class="logo_hidden" onclick="followingLink('index.html')"><span>CRM</span></div>
             <div class="search">
                 <img src="img/search.svg" alt="search">
                 <p>Google search</p>
@@ -46,29 +55,123 @@
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><img src="img/dashboard-active.svg" alt="DashboardIcon"><a href="#">Dashboard</a></li>
-                        <li><img src="img/deals.svg" alt="DetailIcon"><a href="#">Detail</a></li>
-                        <li><img src="img/tasks.svg" alt="ExportIcon"><a href="#">Export</a></li>
-                        <li><img src="img/chat.svg" alt="HelpIcon"><a href="#">Help</a></li>
-                        <li><img src="img/contacts.svg" alt="ContactIcon"><a href="#">Contact</a></li>
+                        <li onclick="followingLink('index.html')"><img src="img/dashboard-active.svg"
+                                alt="DashboardIcon">
+                            <p>Dashboard</p>
+                        </li>
+                        <li onclick="followingLink('pages/detail.html')"><img src=" img/deals.svg" alt="DetailIcon">
+                            <p>Detail</p>
+                        </li>
+                        <li onclick="followingLink('index.html')"><img src="img/tasks.svg" alt="ExportIcon">
+                            <p>Export</p>
+                        </li>
+                        <li onclick="followingLink('index.html')"><img src="img/chat.svg" alt="HelpIcon">
+                            <p>Help</p>
+                        </li>
+                        <li onclick="followingLink('index.html')"><img src="img/contacts.svg" alt="ContactIcon">
+                            <p>Contact</p>
+                        </li>
                     </ul>
                 </div>
                 <div class="borderMeu">
                     <div class="settings">
                         <ul>
-                            <li><img src="img/settings.svg" alt="SettingsIcon"><a href="#">Settings</a></li>
-                            <li class="btn" id="toggleLink"><img src="img/toggle.svg" alt="ToggleIcon"><a
-                                    href="#">Toggle sidebar</a></li>
+                            <li onclick="followingLink('index.html')"><img src="img/settings.svg" alt="SettingsIcon">
+                                <p>Settings</p>
+                            </li>
+                            <li class="btn" id="toggleLink"><img src="img/toggle.svg" alt="ToggleIcon">
+                                <p>Toggle sidebar</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="contentGrid">
-                <div class="dashboard1"></div>
+                <div class="dashboard1">
+                    <div class="dashboard1__headr">
+                        <div>
+                            <p>Total deals:</p>
+                        </div>
+                    </div>
+                    <div class="dashboard1__content">
+                        <div>0</div>
+                        <div id="allSumm1" class="dashboard1__summ">0 &#8381;</div>
+                    </div>
+                </div>
+                <div class="dashboard1">
+                    <div class="dashboard1__headr">
+                        <div>
+                            <p>Deals in work:</p>
+                        </div>
+                    </div>
+                    <div class="dashboard1__content">
+                        <div>0</div>
+                        <div class="dashboard1__summ">0 &#8381;</div>
+                    </div>
+                </div>
+                <div class="dashboard1">
+                    <div class="dashboard1__headr">
+                        <div>
+                            <p>Deals won:</p>
+                        </div>
+                    </div>
+                    <div class="dashboard1__content">
+                        <div>0</div>
+                        <div class="dashboard1__summ">0 &#8381;</div>
+
+                    </div>
+                </div>
+                <div class="dashboard1">
+                    <div class="dashboard1__headr">
+                        <div>
+                            <p>Deals lost:</p>
+                        </div>
+                    </div>
+                    <div class="dashboard1__content">
+                        <div>0</div>
+                        <div class="dashboard1__summ">0 &#8381;</div>
+                    </div>
+                </div>
+                <div class="topFiveDials">
+                    <div class="dashboard1__headr">
+                        <div>
+                            <p>Top 5 won deals:</p>
+                        </div>
+                    </div>
+                    <div class="dashboard1__content">
+                        <div class="dashboard1__text">Нет значений для выгрузки</div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </body>
+
+<script>
+    const myObjectString = sessionStorage.getItem('mySessionVar');
+
+    if (myObjectString) {
+        var myObject = JSON.parse(myObjectString);
+        var dashboards = document.querySelectorAll('.dashboard1');
+        dashboards[0].children[1].children[0].innerText = `${myObject.countDeals}`;
+        dashboards[0].children[1].children[1].innerText = `${formatNumberWithSpaces(myObject.sumDeals)} \u20BD`;
+
+        dashboards[1].children[1].children[0].innerText = `${myObject.countInWorks}`;
+        dashboards[1].children[1].children[1].innerText = `${formatNumberWithSpaces(myObject.sumInWorks)} \u20BD`;
+
+        dashboards[2].children[1].children[0].innerText = `${myObject.countWons}`;
+        dashboards[2].children[1].children[1].innerText = `${formatNumberWithSpaces(myObject.sumWons)} \u20BD`;
+
+        dashboards[3].children[1].children[0].innerText = `${myObject.countLose}`;
+        dashboards[3].children[1].children[1].innerText = `${formatNumberWithSpaces(myObject.sumLose)} \u20BD`;
+
+
+    } else {
+        console.log('Нет данных в сессионной переменной');
+    }
+    //Вставить данные в контейнер id="allSumm"
+
+</script>
 
 </html>

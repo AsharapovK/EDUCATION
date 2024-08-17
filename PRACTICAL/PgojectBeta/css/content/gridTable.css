@@ -1,0 +1,56 @@
+.contentGrid {
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto; }
+
+.grid-header {
+  height: 48px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #90a0b7;
+  background-color: white;
+  border-top: 1px solid #ebeff2;
+  border-bottom: 1px solid #ebeff2;
+  padding: 5px 10px 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.grid-item {
+  font-family: "Play";
+  height: 64px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0.7px 10px 0px 10px;
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #707683;
+  border-bottom: 1px solid #ebeff2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .grid-item:nth-child(5n + 3) {
+    font-size: 14px;
+    font-weight: 400;
+    color: #192a3e; }
+  .grid-item:nth-child(5n + 5) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end; }
+  .grid-item:hover {
+    -webkit-transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in;
+    color: #109cf1; }
+
+/*# sourceMappingURL=gridTable.css.map */
