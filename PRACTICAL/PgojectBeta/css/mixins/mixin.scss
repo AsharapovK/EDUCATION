@@ -10,7 +10,7 @@ $colorDarkBlueText: #334d6e;
     width: 20px;
   }
 
-  >p {
+  > p {
     color: $color;
 
     &:hover {
@@ -63,4 +63,79 @@ $colorDarkBlueText: #334d6e;
       font-weight: 500;
     }
   }
+}
+
+@mixin settings_item($gridColumn, $gridRow, $color) {
+  width: 100%;
+  height: 100%;
+  grid-column: unquote($gridColumn);
+  grid-row: unquote($gridRow);
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.208);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .setting__headr {
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid $colorBorder;
+    padding: 16px 0 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $colorDarkBlueText;
+  }
+  .setting__content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin stepItem($gridColumn, $gridRow, $color) {
+  .setting__content__step {
+    grid-column: unquote($gridColumn);
+    grid-row: unquote($gridRow);
+    color: $colorGray;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 auto;
+    line-height: 92px;
+    text-transform: uppercase;
+  }
+
+  .setting__content__text {
+    grid-column: 2/5;
+    grid-row: 2;
+    margin: 0px 15px 0px 15px;
+
+    // text-transform: uppercase;
+    color: #818e9b;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  // .setting__content__input {
+  //   grid-column: 2;
+  //   grid-row: 2;
+  //   height: 40px;
+  //   margin: 0px 15px 0px 15px;
+  //   font-size: 20px;
+  //   font-weight: 600;
+  //   color: $colorTableGray;
+  //   padding-left: 10px;
+  // }
+
+  // .setting__content__button {
+  //   grid-column: 3;
+  //   grid-row: 2;
+  //   height: 40px;
+  //   margin: 0px 15px 0px 0px;
+  //   border: 1px solid #e3e3e3;
+  //   background-color: $color;
+  //   color: white;
+  //   text-transform: uppercase;
+  //   border-radius: 5px;
+  // }
 }

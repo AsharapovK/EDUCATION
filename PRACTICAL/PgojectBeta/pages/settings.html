@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectBeta dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/normolise.css">
+    <link rel="stylesheet" href="../css/style__activeMenu.css">
+    <link rel="stylesheet" href="../css/style__hideMenu.css">
+    <link rel="stylesheet" href="../css/content/settings.css">
+    <script src="../js/secondScripts.js"></script>
+    <script src="../js/hideMenuTrue.js" defer></script>
+
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<style>
+    .settings li:nth-child(1) p {
+        color: #109cf1;
+    }
+</style>
+
+
+<body>
+    <div class="firstConteiner">
+        <div class="upMenu">
+            <div class="logo" onclick="followingLink('../index.html')">
+                <span>DASHBOARD CRM</span>
+            </div>
+
+
+            <div class="logo_hidden" onclick="followingLink('../index.html')">
+                <span>CRM</span>
+            </div>
+            <div class="search">
+                <img src="../img/search.svg" alt="search">
+                <p>Google search</p>
+            </div>
+            <img class="notificationImg" src="../img/notification.svg" alt="notification">
+        </div>
+        <div class="secondConteiner">
+            <div class="leftMenu">
+                <div class="user">
+                    <div>
+                        <div>
+                            <img class="profilePhoto" src="../img/profile_photo.jpg" alt="User_foto">
+                        </div>
+                        <div class="userText">
+                            <p>Julia Komleva</p>
+                            <p>info@2sheets.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li onclick="followingLink('../index.html')"><img src="../img/dashboard.svg"
+                                alt="DashboardIcon">
+                            <p>Dashboard</p>
+                        </li>
+                        <li onclick="followingLink('detail.html')"><img src="../img/deals.svg" alt="DetailIcon">
+                            <p>Detail</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/tasks.svg" alt="ExportIcon">
+                            <p>Export</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/chat.svg" alt="HelpIcon">
+                            <p>Help</p>
+                        </li>
+                        <li onclick="followingLink('../index.html')"><img src="../img/contacts.svg" alt="ContactIcon">
+                            <p>Contact</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="borderMeu">
+                    <div class="settings">
+                        <ul>
+                            <li onclick="followingLink('settings.html')"><img src="../img/settings-active.svg"
+                                    alt="SettingsIcon">
+                                <p>Settings</p>
+                            </li>
+                            <li class="btn" id="toggleLink"><img src="../img/toggle.svg" alt="ToggleIcon">
+                                <p>Toggle sidebar</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="contentGrid" class="contentGrid">
+                <div class="setting">
+                    <div class="setting__headr">
+                        <div>
+                            <p>Settings:</p>
+                        </div>
+                    </div>
+                    <div class="setting__content">
+                        <div class="setting__content__border">
+                            <!-- <p class="setting__content__step">1 step</p> -->
+                            <p class="setting__content__text">Link to your Bitrix24</p>
+                            <input class="setting__content__input" type="text" id="bxUrlLink" name="bxUrlLink" required
+                                placeholder="https://2sheets.bitrix24.by" value="https://2sheets.bitrix24.by">
+                        </div>
+                        <div class="setting__content__link">
+                            <!-- <p class="setting__content__step">2 step</p> -->
+                            <div class="setting__content__link__text">
+                                <p>1. Follow this link and click on “incoming webhook”</p>
+                                <p>2. Copy the Webhook to call rest api</p>
+                                <a class="setting__content__link__text__link" target="_blank" href="#">https://</a>
+                            </div>
+                        </div>
+                        <div class="setting__content__webhook">
+                            <!-- <p class="setting__content__step">3 step</p> -->
+                            <p class="setting__content__text">Copy the webhook and click “Accept”</p>
+                            <input class="setting__content__input" type="text" id="bxUrlLink2" name="bxUrlLink"
+                                value="https://tska.bitrix24.by/rest/17/gcrhkxhk0v6q8i8s/" required>
+                            <button class="setting__content__button_cls" onclick="clearBtn()">Clear</button>
+                            <button class="setting__content__button_ok" onclick="getBxData()">Accept</button>
+                        </div>
+                    </div>
+                </div>
+                <div class=" control">
+                </div>
+                <div class="time"></div>
+            </div>
+</body>
+<script src="../js/hideMenu.js" defer></script>
+<script>
+    document.getElementById('bxUrlLink').addEventListener('blur', function () {
+        let url = this.value.trim();
+
+        // Регулярное выражение для извлечения домена, с опциональным протоколом
+        let domainMatch = url.match(/^(https?:\/\/)?([^\/]+)/);
+
+        if (domainMatch) {
+            let domain = domainMatch[2]; // Домен всегда будет во второй группе
+            this.value = domain; // Оставляем в поле ввода только домен
+
+            // Формируем новую ссылку
+            let newLink = `https://${domain}/devops/section/standard/`;
+
+            // Находим тег <a>
+            let linkElement = document.querySelector('.setting__content__link__text__link');
+
+            // Обновляем href и текст ссылки
+            linkElement.href = newLink;
+            linkElement.textContent = newLink;
+
+            // Запускаем анимацию, добавив класс
+            linkElement.classList.add('animate');
+        }
+    });
+</script>
+
+
+
+</html>

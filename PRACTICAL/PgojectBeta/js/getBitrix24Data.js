@@ -1,27 +1,36 @@
-const bitrix24URL = `https://media-led.bitrix24.ru/rest/117/asvfxcowc1veec19`;
-const methodList = `crm.deal.list`;
-const selectStr = `select[]=ID&select[]=TITLE&select[]=STAGE_ID&select[]=OPPORTUNITY&select[]=DATE_CREATE`;
-const filterStr = `filter[!OPPORTUNITY]=0`;
+const myObjectString = sessionStorage.getItem("mySessionbitrix24URL");
 
-let responsUrl = `${bitrix24URL}/${methodList}?${selectStr}&${filterStr}&order[ID]=DESC&start-1`;
+if (myObjectString) {
+  var myObject = JSON.parse(myObjectString);
 
-let codeResponse = responsUrl.replace(/[<>]/g, function (match) {
-  return encodeURIComponent(match);
-});
+  const bitrix24URL = myObject;
+  const methodList = `crm.deal.list`;
+  const selectStr = `select[]=ID&select[]=TITLE&select[]=STAGE_ID&select[]=OPPORTUNITY&select[]=DATE_CREATE`;
+  const filterStr = `filter[!OPPORTUNITY]=0`;
 
-fetch(codeResponse, {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-  },
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    displayData(data.result);
+  let responsUrl = `${bitrix24URL}/${methodList}?${selectStr}&${filterStr}&order[ID]=DESC&start-1`;
+
+  let codeResponse = responsUrl.replace(/[<>]/g, function (match) {
+    return encodeURIComponent(match);
   });
 
+  fetch(codeResponse, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      displayData(data.result);
+    });
+} else {
+  console.log(
+    "Не введена ссылка в настройках или проблема с сессионной переменной"
+  );
+}
 function displayData(deals) {
   let contentGrid = document.getElementById("contentGrid");
 

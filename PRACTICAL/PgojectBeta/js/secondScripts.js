@@ -28,3 +28,26 @@ function followingLink(ActiveLink) {
     window.location.href = ActiveLink;
   }
 }
+
+function clearBtn() {
+  // Очищаем первое поле ввода
+  document.getElementById("bxUrlLink").value = "";
+  document.getElementById("bxUrlLink").placeholder = "";
+
+  document.getElementById("bxUrlLink2").value = "";
+  document.getElementById("bxUrlLink2").placeholder = "";
+
+  // Сбрасываем текст и ссылку в элементе <a>
+  let linkElement = document.querySelector(
+    ".setting__content__link__text__link"
+  );
+  linkElement.href = "#";
+  linkElement.textContent = "https://";
+}
+
+function getBxData() {
+  var bitrix24URL = document.getElementById("bxUrlLink2").value;
+  // Парсим и сохраняем строку в сессионной переменной
+  const myObjectString = JSON.stringify(bitrix24URL);
+  sessionStorage.setItem("mySessionbitrix24URL", myObjectString);
+}
