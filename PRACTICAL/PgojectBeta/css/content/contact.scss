@@ -22,18 +22,24 @@ $colorBorder: #ebeff2;
   grid-row: 3;
   display: grid;
   grid-template-columns: 1fr 36px 2fr;
-  grid-template-rows: 400px 36px auto;
+  grid-template-rows: 1fr 36px 3fr auto;
   // transition: all 1s ease;
 }
 
 //Записки
 .setting {
-  @include settings_item(3, 1, $colorAccentBlue);
+  @include settings_item("3", "1", $colorAccentBlue);
+  justify-content: stretch;
 }
 
 //Моя карточка
 .control {
-  @include settings_item(1, "1/4", $colorAccentBlue);
+  @include settings_item("1", "1/4", $colorAccentBlue);
+}
+
+//Нотификации
+.video__help {
+  @include settings_item("3", "3", $colorAccentBlue);
 }
 
 //Поле контента внутри карточек
@@ -110,231 +116,110 @@ $colorBorder: #ebeff2;
 .setting__content__cardEditor {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 47.5px 33px 29.5px repeat(8, 1fr);
+  grid-template-rows: 47.5px 33px repeat(4, 31px 33px);
   div {
     display: flex;
     align-items: end;
   }
-  & > div:nth-child(1) {
+
+  // Для к нечетных элементов
+  & > div:nth-child(odd) {
     @include contact__title();
-  }
-  & > div:nth-child(2) {
-    @include contact__text();
-  }
-  & > div:nth-child(3) {
-    @include contact__title();
-  }
-  & > div:nth-child(4) {
-    @include contact__text();
-  }
-  & > div:nth-child(5) {
-    @include contact__title();
-  }
-  & > div:nth-child(6) {
-    @include contact__text();
-  }
-  & > div:nth-child(7) {
-    @include contact__title();
-  }
-  & > div:nth-child(8) {
-    @include contact__text();
   }
 
-  //   @include contact__title();
+  // Для к четный элементов
+  & > div:nth-child(even) {
+    @include contact__text();
+  }
 }
 
-// .setting__content__preview:nth-child(1) {
-//   background-color: #2ed47a;
-// }
-//Стадия 1
-// .setting__content__border {
-//   padding: 15px;
-//   display: grid;
-//   grid-template-columns: minmax(70px, 120px) 6fr;
-//   grid-template-rows: 25px 17px 31px;
-//   &:hover {
-//     > *:nth-child(1) {
-//       color: $colorAccentBlue;
-//     }
-//   }
-// }
-// @include stepItem(3, 2, $colorAccentBlue);
+// Шапка с нотификациями в контактах
+.setting__headr__icon {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-//Стадия 2
-// .setting__content__link {
-//   display: grid;
-//   grid-template-columns: minmax(70px, 120px) 6fr;
-//   grid-template-rows: 25px 17px 31px;
-//   padding: 15px;
-//   &:hover {
-//     > *:nth-child(3) {
-//       color: $colorAccentBlue;
-//     }
-//   }
-// }
+  div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    svg {
+      fill: $colorIconGray;
+    }
+    > span {
+      color: $colorIconGray;
+      font-size: 13px;
+      font-weight: 400;
+      margin-left: 6px;
+    }
 
-//Стадия 2 - текст
-// .setting__content__link__text {
-//   grid-column: 2;
-//   grid-row: 1;
-//   margin: 0px 0px 0px 15px;
-//   color: #818e9b;
-//   font-size: 13px;
-//   font-weight: 500;
-//   line-height: 2;
-// }
+    &:hover {
+      svg {
+        fill: $colorDarkBlueText;
+      }
+      span {
+        color: $colorDarkBlueText;
+      }
+    }
+  }
+}
 
-//Стадия 2 - ссылка
-// .setting__content__link__text__link {
-//   display: block;
-//   margin: 0px 15px 0px 0px;
-//   color: $colorAccentBlue;
-//   border-bottom: 1px solid #d3d8dd;
-//   transition: color 0.3s ease, border-bottom 0.3s ease;
-//   opacity: 0; // Начальное состояние — прозрачное
-//   transform: translateY(10px); // Начальное состояние — немного смещено
-//   transition: opacity 0.5s ease, transform 0.5s ease; // Переход для прозрачности и смещения
+.video__help__youtube {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  div {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-//   &.animate {
-//     opacity: 1; // Конечное состояние — видимый элемент
-//     transform: translateY(0); // Конечное состояние — без смещения
-//   }
-
-//   &:hover {
-//     color: #34aff9;
-//     border-bottom: 1px solid $colorAccentBlue;
-//   }
-
-//   &:active {
-//     color: #098edf;
-//   }
-// }
-
-//Стадия 2
-// .setting__content__webhook {
-//   display: grid;
-//   grid-template-columns: minmax(70px, 120px) 6fr 160px 160px;
-//   grid-template-rows: 25px 17px 31px 1fr;
-//   padding: 15px;
-// }
-// @include stepItem(1, 1/3, $colorAccentBlue);
-
-//Стадия 2 - ввод
-// .setting__content__input {
-//   grid-column: 2/5;
-//   grid-row: 3;
-//   height: 20px;
-//   margin: 0px 15px 0px 15px;
-//   border-bottom: 1px solid #d3d8dd;
-//   text-transform: lowercase;
-
-//   font-size: 13px;
-//   font-weight: 400;
-//   color: $colorTableBlack;
-//   padding: 0px 0px 6px 0px;
-//   transition: border-color 0.2s ease;
-
-//   &:focus {
-//     border-color: $colorAccentBlue;
-//     outline: none;
-//   }
-// }
-
-// .setting__content__button_cls {
-//   grid-column: 3;
-//   grid-row: 4;
-//   height: 42px;
-//   margin: 0px 15px 0px 15px;
-//   border: 1px solid #098edf;
-//   border-radius: 5px;
-
-//   font-size: 13px;
-//   color: $colorAccentBlue;
-//   transition: background-color 0.3s ease;
-
-//   &:hover {
-//     color: #34aff9;
-//     cursor: pointer;
-//   }
-//   &:active {
-//     color: #098edf;
-//   }
-// }
-
-// .setting__content__button_ok {
-//   grid-column: 4;
-//   grid-row: 4;
-//   height: 42px;
-//   margin: 0px 15px 0px 15px;
-//   border: 1px solid transparent;
-//   background-color: $colorAccentBlue;
-//   font-size: 13px;
-//   color: white;
-
-//   border-radius: 4px;
-//   transition: background-color 0.3s ease;
-
-//   &:hover {
-//     background-color: #34aff9;
-//     cursor: pointer;
-//   }
-//   &:active {
-//     background-color: #098edf;
-//     cursor: pointer;
-//   }
-// }
-
-// .insertNotification {
-//   height: 80vh;
-//   overflow: auto;
-//   position: relative;
-// }
-
-// .insertNotification > *:first-child {
-//   // animation-delay: 0.5s; /* Задержка перед началом анимации для первого элемента */
-//   animation: fadeInAndSlideDown 1s ease-in-out;
-// }
-
-// .insertNotification > *:not(:first-child) {
-//   animation: slideDown 0.5s ease-in-out;
-//   animation-fill-mode: forwards;
-// }
-
-// @keyframes fadeInAndSlideDown {
-//   0% {
-//     opacity: 0;
-//     transform: translateY(-20px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
-// @keyframes slideDown {
-//   0% {
-//     // opacity: 0;
-//     transform: translateY(-126px);
-//   }
-
-//   100% {
-//     // opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
-// Блок уведомлений
-
-.video__help {
-  @include settings_item(3, 3, $colorAccentBlue);
+// Поле контента внутри карточек
+.setting__content__note {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.setting__content__note__text {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  color: $colorIconGray;
+  font-size: 14px;
+  > p {
+    margin: 16px 0px 0px 16px;
+  }
+}
+.setting__content__note__footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding: 16px;
+  color: $colorIconGray;
+  font-size: 14px;
+  font-weight: 500;
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    > svg {
+      fill: $colorIconGray;
+      margin-left: 8px;
+      &:hover {
+        fill: $colorDarkBlueText;
+      }
+    }
+  }
+  > div:last-child {
+    button {
+      padding-right: 20px;
+      &:hover {
+        color: $colorDarkBlueText;
+      }
+    }
+  }
 }
-
-// .video__help__youtube {
-//   width: 100%;
-//   height: 100%;
-//   > div {
-//     width: 100%;
-//     height: 100%;
-//   }
-// }

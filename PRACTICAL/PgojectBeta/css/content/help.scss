@@ -1,0 +1,53 @@
+$colorAccentBlue: #109cf1;
+$colorYellow: #ffb946;
+$colorRed: #f7685b;
+$colorGreen: #2ed47a;
+$colorPurple: #885af8;
+$colorBlack: #192a3e;
+$colorTableBlack: #323c47;
+$colorTableGray: #707683;
+$colorDarkBlueText: #334d6e;
+$colorGray: #90a0b7;
+$colorIconGray: #c2cfe0;
+$cologBG: #f5f6f8;
+$colorBorder: #ebeff2;
+@import "../mixins/mixin.scss";
+
+.secondConteiner {
+  grid-template-rows: 60px 36px auto 60px;
+}
+
+.contentGrid {
+  grid-column: 4/6;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 3fr;
+  padding: 0px;
+  //   background-color: white
+
+  // transition: all 1s ease;
+}
+
+//Нотификации
+.video__help {
+  @include settings_item("1/4", "1", $colorAccentBlue);
+  box-shadow: none;
+}
+
+//Поле контента внутри карточек
+.setting__content {
+  // width: 800px;
+    background-color: white;
+  border-radius: 10px;
+}
+
+.video__help__youtube {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  div {
+    width: 100%;
+    height: 100%;
+  }
+}
