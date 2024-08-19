@@ -3,9 +3,10 @@
 function checkWidth() {
     if (window.innerWidth <= 1200) {
       document.body.classList.add('ActiveHideMenu');
-    } else {
-      document.body.classList.remove('ActiveHideMenu');
-    }
+    } 
+    // else {
+    //   document.body.classList.remove('ActiveHideMenu');
+    // }
   }
   
   // Запуск функции при загрузке страницы
