@@ -1,0 +1,69 @@
+.ActiveHideMenu .secondConteiner .contentGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  // gap: 5px;
+}
+
+.ActiveHideMenu .secondConteiner .contentGrid .setting {
+  margin: 5px !important;
+}
+
+.setting {
+  margin: 5px !important;
+}
+
+.control {
+  // display: none;
+  margin: 5px !important;
+}
+
+.video__help {
+  display: none;
+}
+.setting {
+  height: auto;
+}
+
+.insertNotification {
+  height: 100%;
+}
+
+.setting__content__border {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting__content__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: right;
+  padding: 0;
+}
+
+.setting__content__webhook {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.setting__content__button_cls {
+  margin: 15px;
+}
+
+.setting__content__button_ok {
+    margin: 0px 15px 15px 15px;
+  }
+
+.setting__content__text {
+  width: 100%;
+}
+.setting__content__input {
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+.ActiveHideMenu .secondConteiner .contentGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.dashboard1__headr_flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard1__content {
+  font-size: 45px !important;
+}
+
+.dashboard1__summ {
+  font-size: 30px !important;
+}
+
+.dashboard1 {
+  margin: 5px;
+  margin-right: 10px;
+}
+
+.topFiveDials {
+  display: none;
+}
+/*# sourceMappingURL=media950.css.map */

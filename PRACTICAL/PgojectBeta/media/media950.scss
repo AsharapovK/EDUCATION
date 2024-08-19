@@ -1,0 +1,31 @@
+// .ActiveHideMenu .secondConteiner {
+//   grid-template-columns: 1fr !important ;
+//   grid-template-rows: 60px 10px 1fr 36px;
+// }
+// @import "../css/mixins/mixin.scss";
+
+.ActiveHideMenu .secondConteiner .contentGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dashboard1__headr_flex {
+  flex-direction: row;
+}
+.dashboard1__content {
+  font-size: 45px !important;
+}
+.dashboard1__summ{
+  font-size: 30px !important;
+}
+
+.dashboard1 {
+  margin: 5px;
+  margin-right: 10px;
+}
+
+.topFiveDials {
+  display: none;
+}

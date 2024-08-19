@@ -1,0 +1,26 @@
+.ActiveHideMenu .secondConteiner .contentGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: auto;
+  gap: 5px;
+}
+
+.ActiveHideMenu .secondConteiner .contentGrid .setting {
+  margin: 5px !important;
+}
+
+.setting {
+  display: none;
+}
+
+.control {
+  margin: 5px !important;
+}
+
+.setting__headr__icon {
+  & div {
+    flex-direction: column !important;
+  }
+}

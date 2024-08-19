@@ -5,6 +5,7 @@
   height: 100%;
   display: -ms-grid;
   display: grid;
+  overflow: auto;
   -ms-grid-columns: auto auto 1fr auto auto auto auto auto auto;
   grid-template-columns: auto auto 1fr auto auto auto auto auto auto;
 }
