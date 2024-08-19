@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectBeta dashboard</title>
+    <title>Dashboard CRM | Dashboard</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normolise.css">
     <link rel="stylesheet" href="css/style__activeMenu.css">
@@ -13,6 +13,8 @@
     <script src="js/hideMenu.js" defer></script>
     <script src="js/hideMenuTrue.js" defer></script>
     <script src="js/secondScripts.js"></script>
+    <script src="js/getBx24DataTop5.js" defer></script>
+
 
 
     <link
@@ -68,7 +70,7 @@
                         <li onclick="followingLink('index.html')"><img src="img/chat.svg" alt="HelpIcon">
                             <p>Help</p>
                         </li>
-                        <li onclick="followingLink('index.html')"><img src="img/contacts.svg" alt="ContactIcon">
+                        <li onclick="followingLink('pages/contact.html')"><img src="img/contacts.svg" alt="ContactIcon">
                             <p>Contact</p>
                         </li>
                     </ul>
@@ -76,7 +78,8 @@
                 <div class="borderMeu">
                     <div class="settings">
                         <ul>
-                            <li onclick="followingLink('pages/settings.html')"><img src="img/settings.svg" alt="SettingsIcon">
+                            <li onclick="followingLink('pages/settings.html')"><img src="img/settings.svg"
+                                    alt="SettingsIcon">
                                 <p>Settings</p>
                             </li>
                             <li class="btn" id="toggleLink"><img src="img/toggle.svg" alt="ToggleIcon">
@@ -89,8 +92,9 @@
             <div class="contentGrid">
                 <div class="dashboard1">
                     <div class="dashboard1__headr">
-                        <div>
+                        <div class="dashboard1__headr_flex">
                             <p>Total deals:</p>
+                            <div class="dashboard1__time"><span>Show:</span><span> Last 50 deals</span></div>
                         </div>
                     </div>
                     <div class="dashboard1__content">
@@ -100,8 +104,9 @@
                 </div>
                 <div class="dashboard1">
                     <div class="dashboard1__headr">
-                        <div>
+                        <div class="dashboard1__headr_flex">
                             <p>Deals in work:</p>
+                            <div class="dashboard1__time"><span>Show:</span><span> Last 50 deals</span></div>
                         </div>
                     </div>
                     <div class="dashboard1__content">
@@ -111,8 +116,9 @@
                 </div>
                 <div class="dashboard1">
                     <div class="dashboard1__headr">
-                        <div>
+                        <div class="dashboard1__headr_flex">
                             <p>Deals won:</p>
+                            <div class="dashboard1__time"><span>Show:</span><span> Last 50 deals</span></div>
                         </div>
                     </div>
                     <div class="dashboard1__content">
@@ -123,8 +129,9 @@
                 </div>
                 <div class="dashboard1">
                     <div class="dashboard1__headr">
-                        <div>
+                        <div class="dashboard1__headr_flex">
                             <p>Deals lost:</p>
+                            <div class="dashboard1__time"><span>Show:</span><span> Last 50 deals</span></div>
                         </div>
                     </div>
                     <div class="dashboard1__content">
@@ -134,12 +141,12 @@
                 </div>
                 <div class="topFiveDials">
                     <div class="dashboard1__headr">
-                        <div>
-                            <p>Top 5 won deals:</p>
+                        <div class="dashboard1__headr_flex">
+                            <p>Top 5 deals:</p>
+                            <div class="dashboard1__time"><span>Show:</span><span> All time</span></div>
                         </div>
                     </div>
-                    <div class="dashboard1__content">
-                        <div class="dashboard1__text">Нет значений для выгрузки</div>
+                    <div id="Top5Deals" class="Top5Deals">
                     </div>
                 </div>
             </div>
@@ -150,7 +157,6 @@
 
 <script>
     const myObjectString = sessionStorage.getItem('mySessionVar');
-
     if (myObjectString) {
         var myObject = JSON.parse(myObjectString);
         var dashboards = document.querySelectorAll('.dashboard1');
@@ -170,8 +176,6 @@
     } else {
         console.log('Нет данных в сессионной переменной');
     }
-    //Вставить данные в контейнер id="allSumm"
-
 </script>
 
 </html>

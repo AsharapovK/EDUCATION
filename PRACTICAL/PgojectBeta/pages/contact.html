@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard CRM | settings</title>
+    <title>Dashboard CRM | Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/normolise.css">
     <link rel="stylesheet" href="../css/style__activeMenu.css">
     <link rel="stylesheet" href="../css/style__hideMenu.css">
-    <link rel="stylesheet" href="../css/content/settings.css">
+    <link rel="stylesheet" href="../css/content/contact.css">
     <script src="../js/secondScripts.js" defer></script>
     <script src="../js/hideMenuTrue.js" defer></script>
-
-
+    <script src="../js/hideMenu.js" defer></script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -23,7 +22,7 @@
 </head>
 
 <style>
-    .settings li:nth-child(1) p {
+    .menu li:nth-child(5) p {
         color: #109cf1;
     }
 </style>
@@ -74,7 +73,7 @@
                         <li onclick="followingLink('../index.html')"><img src="../img/chat.svg" alt="HelpIcon">
                             <p>Help</p>
                         </li>
-                        <li onclick="followingLink('contact.html')"><img src="../img/contacts.svg" alt="ContactIcon">
+                        <li onclick="followingLink('../index.html')"><img src="../img/contacts.svg" alt="ContactIcon">
                             <p>Contact</p>
                         </li>
                     </ul>
@@ -128,13 +127,55 @@
                 <div class="control">
                     <div class="setting__headr">
                         <div>
-                            <p>Notification:</p>
+                            <p>My card:</p>
                         </div>
                     </div>
                     <div class="setting__content">
-                        <div class="insertNotification">
+                        <div class="setting__content__preview">
+                            <div class="setting__content__avatar"><img src="../img/associated_photo.jpg" alt="Avatar">
+                            </div>
+                            <div class="setting__content__firstName">
+                                <p>Julia Komleva</p>
+                            </div>
+                            <div class="setting__content__role">
+                                <p>Manager</p>
+                            </div>
+                            <div class="setting__content__sex">
+                                <p>Famale</p>
+                            </div>
+                            <div class="setting__content__social">
+                                <img src="../img/website.svg" alt="websiteIcon">
+                                <img src="../img/twitter.svg" alt="twitterIcon">
+                                <img src="../img/facebook.svg" alt="facebookIcon">
+                            </div>
                         </div>
 
+                        <div class="setting__content__cardEditor">
+                            <div class="setting__content__cardEditor__title">
+                                <p>First name</p>
+                            </div>
+                            <div class="setting__content__cardEditor__text">
+                                <p>Julia</p>
+                            </div>
+                            <div class="setting__content__cardEditor__title">
+                                <p>Last name</p>
+                            </div>
+                            <div class="setting__content__cardEditor__text">
+                                <p>Komleva</p>
+                            </div>
+                            <div class="setting__content__cardEditor__title">
+                                <p>Email</p>
+                            </div>
+                            <div class="setting__content__cardEditor__text">
+                                <p>info@2sheets.ru</p>
+                            </div>
+                            <div class="setting__content__cardEditor__title">
+                                <p>Role</p>
+                            </div>
+                            <div class="setting__content__cardEditor__text">
+                                <p>Manager</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -157,33 +198,7 @@
                     </div>
                 </div>
 </body>
-<script src="../js/hideMenu.js" defer></script>
-<script>
-    document.getElementById('bxUrlLink').addEventListener('blur', function () {
-        let url = this.value.trim();
 
-        // Регулярное выражение для извлечения домена, с опциональным протоколом
-        let domainMatch = url.match(/^(https?:\/\/)?([^\/]+)/);
-
-        if (domainMatch) {
-            let domain = domainMatch[2]; // Домен всегда будет во второй группе
-            this.value = domain; // Оставляем в поле ввода только домен
-
-            // Формируем новую ссылку
-            let newLink = `https://${domain}/devops/section/standard/`;
-
-            // Находим тег <a>
-            let linkElement = document.querySelector('.setting__content__link__text__link');
-
-            // Обновляем href и текст ссылки
-            linkElement.href = newLink;
-            linkElement.textContent = newLink;
-
-            // Запускаем анимацию, добавив класс
-            linkElement.classList.add('animate');
-        }
-    });
-</script>
 
 
 

@@ -1,0 +1,340 @@
+$colorAccentBlue: #109cf1;
+$colorYellow: #ffb946;
+$colorRed: #f7685b;
+$colorGreen: #2ed47a;
+$colorPurple: #885af8;
+$colorBlack: #192a3e;
+$colorTableBlack: #323c47;
+$colorTableGray: #707683;
+$colorDarkBlueText: #334d6e;
+$colorGray: #90a0b7;
+$colorIconGray: #c2cfe0;
+$cologBG: #f5f6f8;
+$colorBorder: #ebeff2;
+@import "../mixins/mixin.scss";
+
+.secondConteiner {
+  grid-template-rows: 60px 36px auto 60px;
+}
+
+.contentGrid {
+  grid-column: 4/6;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 36px 2fr;
+  grid-template-rows: 400px 36px auto;
+  // transition: all 1s ease;
+}
+
+//Записки
+.setting {
+  @include settings_item(3, 1, $colorAccentBlue);
+}
+
+//Моя карточка
+.control {
+  @include settings_item(1, "1/4", $colorAccentBlue);
+}
+
+//Поле контента внутри карточек
+.setting__content {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.setting__content__preview {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 138px 25px 22px 36px 62px;
+  align-items: center;
+  border-bottom: 1px solid $colorBorder;
+  margin: 0px 30px;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  & > div:nth-child(1) {
+    grid-row: 1;
+  }
+  & > div:nth-child(2) {
+    grid-row: 2;
+    height: 100%;
+
+    color: $colorTableBlack;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  & > div:nth-child(3) {
+    grid-row: 3;
+    height: 100%;
+
+    color: $colorTableGray;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  & > div:nth-child(4) {
+    grid-row: 4;
+    height: 100%;
+
+    > p {
+      color: white;
+      background-color: $colorGreen;
+      border-radius: 4px;
+      width: 84px;
+      height: 22px;
+      font-size: 11px;
+      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  & > div:nth-child(5) {
+    grid-row: 5;
+    > img:nth-child(1),
+    > img:nth-child(2) {
+      padding: 0 10px;
+    }
+    > img:nth-child(3) {
+      padding: 0 8px;
+    }
+  }
+}
+
+// Карточка с информацией о пользователе
+.setting__content__cardEditor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 47.5px 33px 29.5px repeat(8, 1fr);
+  div {
+    display: flex;
+    align-items: end;
+  }
+  & > div:nth-child(1) {
+    @include contact__title();
+  }
+  & > div:nth-child(2) {
+    @include contact__text();
+  }
+  & > div:nth-child(3) {
+    @include contact__title();
+  }
+  & > div:nth-child(4) {
+    @include contact__text();
+  }
+  & > div:nth-child(5) {
+    @include contact__title();
+  }
+  & > div:nth-child(6) {
+    @include contact__text();
+  }
+  & > div:nth-child(7) {
+    @include contact__title();
+  }
+  & > div:nth-child(8) {
+    @include contact__text();
+  }
+
+  //   @include contact__title();
+}
+
+// .setting__content__preview:nth-child(1) {
+//   background-color: #2ed47a;
+// }
+//Стадия 1
+// .setting__content__border {
+//   padding: 15px;
+//   display: grid;
+//   grid-template-columns: minmax(70px, 120px) 6fr;
+//   grid-template-rows: 25px 17px 31px;
+//   &:hover {
+//     > *:nth-child(1) {
+//       color: $colorAccentBlue;
+//     }
+//   }
+// }
+// @include stepItem(3, 2, $colorAccentBlue);
+
+//Стадия 2
+// .setting__content__link {
+//   display: grid;
+//   grid-template-columns: minmax(70px, 120px) 6fr;
+//   grid-template-rows: 25px 17px 31px;
+//   padding: 15px;
+//   &:hover {
+//     > *:nth-child(3) {
+//       color: $colorAccentBlue;
+//     }
+//   }
+// }
+
+//Стадия 2 - текст
+// .setting__content__link__text {
+//   grid-column: 2;
+//   grid-row: 1;
+//   margin: 0px 0px 0px 15px;
+//   color: #818e9b;
+//   font-size: 13px;
+//   font-weight: 500;
+//   line-height: 2;
+// }
+
+//Стадия 2 - ссылка
+// .setting__content__link__text__link {
+//   display: block;
+//   margin: 0px 15px 0px 0px;
+//   color: $colorAccentBlue;
+//   border-bottom: 1px solid #d3d8dd;
+//   transition: color 0.3s ease, border-bottom 0.3s ease;
+//   opacity: 0; // Начальное состояние — прозрачное
+//   transform: translateY(10px); // Начальное состояние — немного смещено
+//   transition: opacity 0.5s ease, transform 0.5s ease; // Переход для прозрачности и смещения
+
+//   &.animate {
+//     opacity: 1; // Конечное состояние — видимый элемент
+//     transform: translateY(0); // Конечное состояние — без смещения
+//   }
+
+//   &:hover {
+//     color: #34aff9;
+//     border-bottom: 1px solid $colorAccentBlue;
+//   }
+
+//   &:active {
+//     color: #098edf;
+//   }
+// }
+
+//Стадия 2
+// .setting__content__webhook {
+//   display: grid;
+//   grid-template-columns: minmax(70px, 120px) 6fr 160px 160px;
+//   grid-template-rows: 25px 17px 31px 1fr;
+//   padding: 15px;
+// }
+// @include stepItem(1, 1/3, $colorAccentBlue);
+
+//Стадия 2 - ввод
+// .setting__content__input {
+//   grid-column: 2/5;
+//   grid-row: 3;
+//   height: 20px;
+//   margin: 0px 15px 0px 15px;
+//   border-bottom: 1px solid #d3d8dd;
+//   text-transform: lowercase;
+
+//   font-size: 13px;
+//   font-weight: 400;
+//   color: $colorTableBlack;
+//   padding: 0px 0px 6px 0px;
+//   transition: border-color 0.2s ease;
+
+//   &:focus {
+//     border-color: $colorAccentBlue;
+//     outline: none;
+//   }
+// }
+
+// .setting__content__button_cls {
+//   grid-column: 3;
+//   grid-row: 4;
+//   height: 42px;
+//   margin: 0px 15px 0px 15px;
+//   border: 1px solid #098edf;
+//   border-radius: 5px;
+
+//   font-size: 13px;
+//   color: $colorAccentBlue;
+//   transition: background-color 0.3s ease;
+
+//   &:hover {
+//     color: #34aff9;
+//     cursor: pointer;
+//   }
+//   &:active {
+//     color: #098edf;
+//   }
+// }
+
+// .setting__content__button_ok {
+//   grid-column: 4;
+//   grid-row: 4;
+//   height: 42px;
+//   margin: 0px 15px 0px 15px;
+//   border: 1px solid transparent;
+//   background-color: $colorAccentBlue;
+//   font-size: 13px;
+//   color: white;
+
+//   border-radius: 4px;
+//   transition: background-color 0.3s ease;
+
+//   &:hover {
+//     background-color: #34aff9;
+//     cursor: pointer;
+//   }
+//   &:active {
+//     background-color: #098edf;
+//     cursor: pointer;
+//   }
+// }
+
+// .insertNotification {
+//   height: 80vh;
+//   overflow: auto;
+//   position: relative;
+// }
+
+// .insertNotification > *:first-child {
+//   // animation-delay: 0.5s; /* Задержка перед началом анимации для первого элемента */
+//   animation: fadeInAndSlideDown 1s ease-in-out;
+// }
+
+// .insertNotification > *:not(:first-child) {
+//   animation: slideDown 0.5s ease-in-out;
+//   animation-fill-mode: forwards;
+// }
+
+// @keyframes fadeInAndSlideDown {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(-20px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes slideDown {
+//   0% {
+//     // opacity: 0;
+//     transform: translateY(-126px);
+//   }
+
+//   100% {
+//     // opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// Блок уведомлений
+
+.video__help {
+  @include settings_item(3, 3, $colorAccentBlue);
+  padding: 16px;
+}
+
+// .video__help__youtube {
+//   width: 100%;
+//   height: 100%;
+//   > div {
+//     width: 100%;
+//     height: 100%;
+//   }
+// }

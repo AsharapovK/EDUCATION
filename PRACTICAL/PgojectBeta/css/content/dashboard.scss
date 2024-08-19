@@ -17,8 +17,9 @@ $colorBorder: #ebeff2;
   grid-row: 3;
   display: grid;
   grid-template-columns: repeat(7, 1fr minmax(5px, 30px)) 1fr;
+
   // column-gap: minmax(5px, 30px);
-  grid-template-rows: repeat(8, 1fr 30px);
+  grid-template-rows: repeat(6, 1fr 30px);
   .dashboard1 {
     &:nth-child(1) {
       @include dashboard__number("1/4", "1/4", $colorAccentBlue);
@@ -35,18 +36,6 @@ $colorBorder: #ebeff2;
   }
 }
 
-.topFiveDials {
-  width: 100%;
-  height: 100%;
-  grid-column: 1/17;
-  grid-row: 5/10;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.208);
-
-  display: flex;
-  flex-direction: column;
-}
 .dashboard1__headr {
   border-bottom: 1px solid $colorBorder;
   padding: 16px 0 16px 24px;
@@ -69,4 +58,41 @@ $colorBorder: #ebeff2;
   font-size: 16px;
   font-weight: 600;
   color: $colorIconGray;
+}
+
+.topFiveDials {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/17;
+  grid-row: 5/13;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.208);
+}
+
+.Top5Deals {
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto auto auto auto auto;
+  @include table();
+}
+
+.Top5Deals .grid-header {
+  border-top: none;
+}
+
+.dashboard1__headr_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard1__time {
+  font-size: 12px;
+  font-weight: 300;
+  color: $colorTableGray;
+  margin-right: 16px;
+  > span:last-child {
+    color: $colorAccentBlue;
+  }
 }

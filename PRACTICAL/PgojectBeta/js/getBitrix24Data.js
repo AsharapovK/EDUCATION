@@ -5,7 +5,7 @@ if (myObjectString) {
 
   const bitrix24URL = myObject;
   const methodList = `crm.deal.list`;
-  const selectStr = `select[]=ID&select[]=TITLE&select[]=STAGE_ID&select[]=OPPORTUNITY&select[]=DATE_CREATE`;
+  const selectStr = `select[]=ID&select[]=TITLE&select[]=STAGE_ID&select[]=OPPORTUNITY&select[]=DATE_CREATE&select[]=CURRENCY_ID&select[]=COMPANY_ID&select[]=ASSIGNED_BY_ID&select[]=CLOSED`;
   const filterStr = `filter[!OPPORTUNITY]=0`;
 
   let responsUrl = `${bitrix24URL}/${methodList}?${selectStr}&${filterStr}&order[ID]=DESC&start-1`;
@@ -34,7 +34,7 @@ if (myObjectString) {
 function displayData(deals) {
   let contentGrid = document.getElementById("contentGrid");
 
-  let headers = ["ID", "Create date", "Name", "Stage", "Amount"];
+  let headers = ["ID", "Create date", "Name", "Stage", "Amount", "Currency", "CompanyId", "ManagerId", "Closed"];
   for (i = 0; i < headers.length; i++) {
     let headerElement = document.createElement("div");
     headerElement.className = "grid-header";
@@ -81,6 +81,10 @@ function displayData(deals) {
       deal.TITLE,
       deal.STAGE_ID,
       formatNumberWithSpaces(deal.OPPORTUNITY),
+      deal.CURRENCY_ID,
+      deal.COMPANY_ID,
+      deal.ASSIGNED_BY_ID,
+      deal.CLOSED,
     ];
     for (k = 0; k < dealData.length; k++) {
       let itemElement = document.createElement("div");
