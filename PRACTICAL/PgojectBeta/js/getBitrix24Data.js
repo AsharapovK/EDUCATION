@@ -14,6 +14,7 @@ if (myObjectString) {
     return encodeURIComponent(match);
   });
 
+  console.log(codeResponse);
   fetch(codeResponse, {
     method: "GET",
     headers: {
@@ -34,7 +35,17 @@ if (myObjectString) {
 function displayData(deals) {
   let contentGrid = document.getElementById("contentGrid");
 
-  let headers = ["ID", "Create date", "Name", "Stage", "Amount", "Currency", "CompanyId", "ManagerId", "Closed"];
+  let headers = [
+    "ID",
+    "Create date",
+    "Name",
+    "Stage",
+    "Amount",
+    "Currency",
+    "CompanyId",
+    "ManagerId",
+    "Closed",
+  ];
   for (i = 0; i < headers.length; i++) {
     let headerElement = document.createElement("div");
     headerElement.className = "grid-header";

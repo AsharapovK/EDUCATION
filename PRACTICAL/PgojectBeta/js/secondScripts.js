@@ -66,10 +66,11 @@ function clearBtn() {
                             </div>
                         </div>`;
 
-
   console.log(`Количество div: ${count}`);
 
-  let notification_div = document.querySelector(".insertNotification").innerHTML;
+  let notification_div = document.querySelector(
+    ".insertNotification"
+  ).innerHTML;
 
   notification_div = notification__clear + notification_div;
 
@@ -77,14 +78,12 @@ function clearBtn() {
 }
 
 async function getBxData() {
-
   let date = formatDate(new Date());
   let count = calcCount();
 
-
   let bxUrlLink2 = document.getElementById("bxUrlLink2").value;
 
-  if (bxUrlLink2 === '') {
+  if (bxUrlLink2 === "") {
     // count = calcCount();
     let notification__error = `<div class="setting__content__control__error">
     <div class="setting__content__control__notofocation">
@@ -107,11 +106,12 @@ async function getBxData() {
   </div>`;
 
     //Вставляем данные в блок
-    let notification_div = document.querySelector(".insertNotification").innerHTML;
+    let notification_div = document.querySelector(
+      ".insertNotification"
+    ).innerHTML;
     notification_div = notification__error + notification_div;
     document.querySelector(".insertNotification").innerHTML = notification_div;
-  }
-  else {
+  } else {
     // count = calcCount();
     let notification__request = `<div class="setting__content__control__request">
     <div class="setting__content__control__notofocation">
@@ -134,7 +134,9 @@ async function getBxData() {
   </div>`;
 
     //Вставляем данные в блок
-    let notification_div = document.querySelector(".insertNotification").innerHTML;
+    let notification_div = document.querySelector(
+      ".insertNotification"
+    ).innerHTML;
     notification_div = notification__request + notification_div;
     document.querySelector(".insertNotification").innerHTML = notification_div;
     await delay(1500); // Задержка перед добавлением нового элемента
@@ -171,7 +173,6 @@ async function getBxData() {
   }
 }
 
-
 function calcCount() {
   const countComplete = document.querySelectorAll(
     ".setting__content__control__complete"
@@ -194,5 +195,5 @@ function calcCount() {
 }
 
 function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
