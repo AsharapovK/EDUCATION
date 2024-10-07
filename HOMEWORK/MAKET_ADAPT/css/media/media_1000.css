@@ -1,12 +1,14 @@
 * {
-  font-size: small; }
+  font-size: small;
+}
 
 .menu {
   width: 150px;
-  padding: 5px; }
-  .menu h4 {
-    display: none; }
-  .menu ul {
-    padding: 0px; }
-
-/*# sourceMappingURL=media_1000.css.map */
+  padding: 5px;
+}
+.menu h4 {
+  display: none;
+}
+.menu ul {
+  padding: 0px;
+}/*# sourceMappingURL=media_1000.css.map */

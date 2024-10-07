@@ -1,100 +1,120 @@
 :root {
-  --animation-color: #fb6e02; }
+  --animation-color: #fb6e02;
+}
 
 * {
   font-family: "Play", sans-serif;
-  color: rgba(255, 255, 255, 0.825); }
-  * a {
-    padding: 2.5px;
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: uppercase; }
-    * a:hover {
-      color: #ff9100;
-      -webkit-transition: all 1s linear;
-      transition: all 1s linear; }
-    * a:active {
-      color: #249e36; }
-    * a:visited {
-      color: #6c757d; }
+  color: rgba(255, 255, 255, 0.825);
+}
+* a {
+  padding: 2.5px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+* a:hover {
+  color: #ff9100;
+  transition: all 1s linear;
+}
+* a:active {
+  color: #249e36;
+}
+* a:visited {
+  color: #6c757d;
+}
 
 body {
-  background-color: #2c3e50; }
+  background-color: #2c3e50;
+}
 
 .table {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .title {
   text-align: center;
-  margin: 10px; }
+  margin: 50px 10px 20px 10px;
+}
 
 .HomeWorkDiv {
   border: #6c757d solid 1px;
   border-radius: 4px;
   margin: 15px 15px 15px 15px;
   padding: 10px 30px 10px 30px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
-  .HomeWorkDiv h2 {
-    font-size: 18px; }
-  .HomeWorkDiv li {
-    padding: 5px 0px 0px 0px; }
-    .HomeWorkDiv li a {
-      font-size: 16px; }
-  .HomeWorkDiv:hover {
-    border-radius: 10px;
-    border: #fb6e02 solid 0.5px;
-    -webkit-box-shadow: 0 0 20px #fb6e02;
-            box-shadow: 0 0 20px #fb6e02;
-    -webkit-transform: scale(1.008);
-            transform: scale(1.008);
-    background-color: #33485c; }
+  transition: all 0.5s ease;
+}
+.HomeWorkDiv h2 {
+  font-size: 18px;
+}
+.HomeWorkDiv li {
+  padding: 5px 0px 0px 0px;
+}
+.HomeWorkDiv li a {
+  font-size: 16px;
+}
+.HomeWorkDiv:hover {
+  border-radius: 10px;
+  border: #fb6e02 solid 0.5px;
+  box-shadow: 0 0 20px #fb6e02;
+  transform: scale(1.008);
+  background-color: hsl(209, 29%, 28%);
+}
 
 .table {
   display: grid;
-  grid-template-columns: 2% 1fr 2% 20% 2%; }
+  grid-template-columns: 2% 1fr 2% 20% 2%;
+}
 
 .coll_1 {
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 .coll_2 {
-  grid-column: 4; }
-  .coll_2 .coll_2Div:hover > :not(:hover) {
-    opacity: 0.5; }
+  grid-column: 4;
+}
+.coll_2 .coll_2Div:hover > :not(:hover) {
+  opacity: 0.5;
+}
 
 @media all and (max-width: 1625px) {
   .HomeWorkDiv {
-    padding: 5px 15px 5px 15px; }
-    .HomeWorkDiv h2 {
-      font-size: 16px; }
-    .HomeWorkDiv li {
-      padding: 0px 0px 0px 0px; }
-      .HomeWorkDiv li a {
-        font-size: 14px; } }
+    padding: 5px 15px 5px 15px;
+  }
+  .HomeWorkDiv h2 {
+    font-size: 16px;
+  }
+  .HomeWorkDiv li {
+    padding: 0px 0px 0px 0px;
+  }
+  .HomeWorkDiv li a {
+    font-size: 14px;
+  }
+}
 @media all and (max-width: 1337px) {
   .table {
-    grid-template-columns: minmax(300px, 1fr) 300px; }
-
+    grid-template-columns: minmax(300px, 1fr) 300px;
+  }
   .coll_1 {
     grid-template-columns: 1fr;
-    grid-column: 1; }
-
+    grid-column: 1;
+  }
   .coll_2 {
-    grid-column: 2; } }
+    grid-column: 2;
+  }
+}
 .checkmark {
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 .text-container {
   letter-spacing: 3px;
   font-size: 30px;
   position: relative;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .hover-text {
   position: absolute;
@@ -104,13 +124,11 @@ body {
   inset: 0.1px;
   border-right: 6px solid var(--animation-color);
   overflow: hidden;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color); }
+  -webkit-text-stroke: 1px var(--animation-color);
+}
 
 .text-container:hover .hover-text {
   width: 100%;
-  -webkit-filter: drop-shadow(1px 5px 24px var(--animation-color));
-          filter: drop-shadow(1px 5px 24px var(--animation-color)); }
-
-/*# sourceMappingURL=style.css.map */
+  filter: drop-shadow(1px 5px 24px var(--animation-color));
+}/*# sourceMappingURL=style.css.map */

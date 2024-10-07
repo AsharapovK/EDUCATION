@@ -4,13 +4,9 @@
 }
 
 .content {
-  background-color: #cc82bf;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(204, 130, 191);
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .menu {
@@ -32,6 +28,4 @@
 .footer {
   background-color: green;
   height: 60px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

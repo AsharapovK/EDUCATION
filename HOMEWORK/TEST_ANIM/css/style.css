@@ -1,112 +1,80 @@
 .conteiner {
   width: 100vw;
   height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   display: grid;
   grid-template-columns: 100px 1fr 100px 1fr 100px;
   grid-template-rows: 150px 30px 1fr 150px;
-  background-color: azure; }
-  .conteiner .PermanentAnimationText {
-    margin: 0 auto;
-    grid-column: 2;
-    grid-row: 2;
-    font-size: 20px; }
-  .conteiner .PermanentAnimation {
-    grid-column: 2;
-    grid-row: 3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-animation: PermAnimation 70s linear infinite;
-            animation: PermAnimation 70s linear infinite; }
-  .conteiner .HoverAnimationText {
-    margin: 0 auto;
-    grid-column: 4;
-    grid-row: 2;
-    font-size: 20px; }
-  .conteiner .HoverAnimation {
-    grid-column: 4;
-    grid-row: 3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-transition: all 2s;
-    transition: all 2s; }
-    .conteiner .HoverAnimation img {
-      width: 30%; }
-    .conteiner .HoverAnimation:hover {
-      -webkit-animation: HoverAnimation 2s 1 forwards, ChangeColor 2s 1 2s forwards;
-              animation: HoverAnimation 2s 1 forwards, ChangeColor 2s 1 2s forwards; }
-    .conteiner .HoverAnimation:not(:hover) {
-      -webkit-animation: HoverAnimation2 1s 1 forwards;
-              animation: HoverAnimation2 1s 1 forwards; }
-
-@-webkit-keyframes PermAnimation {
-  from {
-    -webkit-transform: rotate(0deg) scale(0.5);
-            transform: rotate(0deg) scale(0.5); }
-  50% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1); }
-  to {
-    -webkit-transform: rotate(720deg) scale(0.5);
-            transform: rotate(720deg) scale(0.5); } }
+  background-color: azure;
+}
+.conteiner .PermanentAnimationText {
+  margin: 0 auto;
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 20px;
+}
+.conteiner .PermanentAnimation {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  animation: PermAnimation 70s linear infinite;
+}
+.conteiner .HoverAnimationText {
+  margin: 0 auto;
+  grid-column: 4;
+  grid-row: 2;
+  font-size: 20px;
+}
+.conteiner .HoverAnimation {
+  grid-column: 4;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  transition: all 2s;
+}
+.conteiner .HoverAnimation img {
+  width: 30%;
+}
+.conteiner .HoverAnimation:hover {
+  animation: HoverAnimation 2s 1 forwards, ChangeColor 2s 1 2s forwards;
+}
+.conteiner .HoverAnimation:not(:hover) {
+  animation: HoverAnimation2 1s 1 forwards;
+}
 
 @keyframes PermAnimation {
   from {
-    -webkit-transform: rotate(0deg) scale(0.5);
-            transform: rotate(0deg) scale(0.5); }
+    transform: rotate(0deg) scale(0.5);
+  }
   50% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1); }
+    transform: rotate(360deg) scale(1);
+  }
   to {
-    -webkit-transform: rotate(720deg) scale(0.5);
-            transform: rotate(720deg) scale(0.5); } }
-@-webkit-keyframes HoverAnimation {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); } }
+    transform: rotate(720deg) scale(0.5);
+  }
+}
 @keyframes HoverAnimation {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); } }
-@-webkit-keyframes HoverAnimation2 {
-  from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); }
-  to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
+    transform: rotate(180deg);
+  }
+}
 @keyframes HoverAnimation2 {
   from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); }
+    transform: rotate(180deg);
+  }
   to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
-@-webkit-keyframes ChangeColor {
-  0% {
-    background-color: transparent; }
-  100% {
-    background-color: black; } }
+    transform: rotate(0deg);
+  }
+}
 @keyframes ChangeColor {
   0% {
-    background-color: transparent; }
+    background-color: transparent;
+  }
   100% {
-    background-color: black; } }
-
-/*# sourceMappingURL=style.css.map */
+    background-color: black;
+  }
+}/*# sourceMappingURL=style.css.map */

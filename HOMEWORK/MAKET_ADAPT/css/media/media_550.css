@@ -1,11 +1,12 @@
 .allContent h3 {
-  margin: 5px; }
+  margin: 5px;
+}
 .allContent .contentdiv {
   padding: 0px 10px 5px 10px;
-  background-position: left; }
-  .allContent .contentdiv img {
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 0px; }
-
-/*# sourceMappingURL=media_550.css.map */
+  background-position: left;
+}
+.allContent .contentdiv img {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 0px;
+}/*# sourceMappingURL=media_550.css.map */
