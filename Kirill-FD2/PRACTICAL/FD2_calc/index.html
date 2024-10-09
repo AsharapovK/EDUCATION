@@ -2,73 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
 </head>
 
 <body>
-    <div>
-        <div>
-            <input type="button" value="1" onclick="getNumber(1)">
-            <input type="button" value="2" onclick="getNumber(2)">
-            <input type="button" value="3" onclick="getNumber(3)">
-            <input type="button" value="+" onclick="getOperand('+')">
-        </div>
-        <div>
-            <input type="button" value="4" onclick="getNumber(4)">
-            <input type="button" value="5" onclick="getNumber(5)">
-            <input type="button" value="6" onclick="getNumber(6)">
-            <input type="button" value="-" onclick="getOperand('-')">
-        </div>
-        <div>
-            <input type="button" value="7" onclick="getNumber(7)">
-            <input type="button" value="8" onclick="getNumber(8)">
-            <input type="button" value="9" onclick="getNumber(9)">
-            <input type="button" value="*" onclick="getOperand('*')">
-        </div>
-        <div>
-
-            <input type="button" value="0" onclick="getNumber(0)">
-            <input type="button" value="/" onclick="getOperand('/')">
-            <input type="button" value="=" onclick="getResult('=')">
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<button class="btn" onclick="getNumber(1)">1</button>
+				<button class="btn" onclick="getNumber(2)">2</button>
+				<button class="btn" onclick="getNumber(3)">3</button>
+				<button class="btn" onclick="getOperand('+')">+</button>
+			</div>
+			<div class="col">
+				<button class="btn" onclick="getNumber(4)">4</button>
+				<button class="btn" onclick="getNumber(5)">5</button>
+				<button class="btn" onclick="getNumber(6)">6</button>
+				<button class="btn" onclick="getOperand('-')">-</button>
+			</div>
+			<div class="col">
+				<button class="btn" onclick="getNumber(7)">7</button>
+				<button class="btn" onclick="getNumber(8)">8</button>
+				<button class="btn" onclick="getNumber(9)">9</button>
+				<button class="btn" onclick="getOperand('*')">*</button>
+			</div>
+			<div class="col">
+				<button class="btn" onclick="getNumber(0)">0</button>
+				<button class="btn" onclick="getOperand('/')">/</button>
+				<button class="btn" onclick="getResult('=')">=</button>
+			</div>
+		</div>
+	</div>
 </body>
 
 
+
 <script>
-    let x = null
-    let y = null
-    let opration = null
-    let result = null
+	// x, y - переменные, которые хранят значения операндов
+	// opration - переменная, которая хранит знак математической операции
+	// result - переменная, которая хранит результат расчета
+	let x = null;
+	let y = null;
+	let opration = null;
+	let result = null;
 
 
+	/**
+	 * Функция getNumber принимает число (number) и в зависимости от текущего
+	 * состояния данных (x, y) присваивает это значение переменной x (если
+	 * x === null) или y.
+	 * @param {number} num - число, которое будет присвоено x или y
+	 */
+	function getNumber(num) {
+		x === null ? x = num : y = num;
+		console.log(`x=${x}; y=${y}`);
+	}
+
+	/**
+	 * Функция getOperand принимает строковый параметр - знак математической операции
+	 * (+, -, *, /) и по нему производит расчет результата.
+	 * @param {string} opration - знак математической операции
+	 */
+	function getOperand(opration) {
+		console.log(opration);
+		switch (opration) {
+			case "+":
+				result = x + y;
+				break;
+			case "-":
+				result = x - y;
+				break;
+			case "*":
+				result = x * y;
+				break;
+			case "/":
+				result = x / y;
+				break;
+		}
+	}
 
 
-    function getNumber(num) {
-        x === null ? x = num : y = num
-        console.log(`x=${x}; y=${y}`)
-    }
-
-
-
-    function getOperand(opration) {
-        console.log(opration)
-        switch (opration) {
-            case '+': result = x + y; break
-            case '-': result = x - y; break
-            case '*': result = x * y; break
-            case '/': result = x / y; break
-        }
-
-    }
-
-    function getResult() {
-        console.log(`Результат: ${result}`)
-    }
-
-
+	/**
+	 * Функция getResult печатает в консоль результат расчета,
+	 * полученный в результате вызова функции getOperand.
+	 */
+	function getResult() {
+		console.log(`Результат: ${result}`);
+	}
 </script>
 
 </html>

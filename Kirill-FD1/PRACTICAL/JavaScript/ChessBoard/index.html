@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
 
-    <div>
-        <pre id="result"></pre>
-    </div>
-    <script>
-        // X 0 X 0 X 0 X 0 X 0
-        // 0 X 0 X 0 X 0 X 0 X 
+	<div>
+		<pre id="result"></pre>
+	</div>
+	<script>
+		// X 0 X 0 X 0 X 0 X 0
+		// 0 X 0 X 0 X 0 X 0 X 
 
-        let ResultString = '';
-        for (let row = 0; row < 8; row++) {
-            for (let cell = 0; cell < 8; cell++) {
-                if (row % 2 !== 0) {
-                    cell % 2 !== 0 ? ResultString += 'X ' : ResultString += 'O ';
-                }
-                if (row % 2 === 0) {
-                    cell % 2 === 0 ? ResultString += 'X ' : ResultString += 'O ';
-                }
-            }
-            ResultString += "\n";
-        }
-        document.getElementById('result').innerText = ResultString;
-    </script>
+		let ResultString = '';
+		for (let row = 0; row < 8; row++) {
+			for (let cell = 0; cell < 8; cell++) {
+				if (row % 2 !== 0) {
+					cell % 2 !== 0 ? ResultString += 'X ' : ResultString += 'O ';
+				}
+				if (row % 2 === 0) {
+					cell % 2 === 0 ? ResultString += 'X ' : ResultString += 'O ';
+				}
+			}
+			ResultString += "\n";
+		}
+		document.getElementById('result').innerText = ResultString;
+	</script>
 
 </body>
 
