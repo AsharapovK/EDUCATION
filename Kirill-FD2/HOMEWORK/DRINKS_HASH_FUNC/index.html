@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+
+		function HashStorageFunc() {
+			let cocktailsObj = {};
+
+			//метод добавления напитка в хранилище
+			function addValue(key, value) {
+				cocktailsObj[key] = value
+				return `Напиток "${key}" успешно добавлен!`
+			}
+
+			//метод получения напитка из хранилища
+			function getValue(key) {
+				return { "Напиток": key, ...cocktailsObj[key] }
+			}
+
+			//метод удаления напитков из хранилища
+			function deleteValue(key) {
+				delete cocktailsObj[key]
+				return `коктейль ${key} удален из хранилища`
+			}
+
+			//метод получения всех названий напитков
+			function getKeys() {
+				return `Доступные напитки: "${Object.keys(cocktailsObj)}"`
+			}
+
+			return {
+				addValue,
+				getValue,
+				deleteValue,
+				getKeys
+			};
+
+		}
+
+		// Создать объект класса HashStorageFunc
+		const drinkStorage = HashStorageFunc()
+
+		//Добавляем напиток в хранилище
+		drinkStorage.addValue('Wiskey Sour', { "Алкогольный": `Да`, "Ингридиенты": ["виски", "сок лимона", "сироп", "белок яйца"], "Приготовления": `Смешать все ингридиенты по 50 гр и шейкануть` })
+		drinkStorage.getKeys()
+
+
+	</script>
+
+</body>
+
+</html>

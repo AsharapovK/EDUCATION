@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		//Объявляем переменные
+		const vovelArr = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+		const str = prompt('Введите строку').split('')
+
+		//Вызываем функции
+		const resultForEach = VowelsCountForEach(str)
+		const resultFilter = VowelsCountFilter(str)
+		const resultReduce = VowelsCountReduce(str)
+		const resultMap = VowelsCountMap(str)
+
+		//Выводим результат
+		console.log(`Метод forEach. Количество гласных букв в строке = ${resultForEach}`)
+		console.log(`Метод filter. Количество гласных букв в строке = ${resultFilter}`)
+		console.log(`Метод reduce. Количество гласных букв в строке = ${resultForEach}`)
+		console.log(`Метод map. Количество гласных букв в строке = ${resultMap}`)
+
+		//Исполняющие функции
+		function VowelsCountForEach(newstr) {
+			let count = 0
+			newstr.forEach(literal => {
+				vovelArr.includes(literal) ? count++ : null
+			})
+			return count
+		}
+
+		function VowelsCountFilter(str) {
+			let resultArr = str.filter(literal => { return vovelArr.includes(literal) })
+			return resultArr.length
+		}
+
+		function VowelsCountReduce(str) {
+			str.reduce((count, literal) => {
+				return vovelArr.includes(literal) ? count++ : count
+			}, 0)
+		}
+
+		function VowelsCountMap(str) {
+			let count = 0
+			str.map(literal => {
+				if (vovelArr.includes(literal)) {
+					count++
+				}
+			})
+			return count
+		}
+
+
+	</script>
+</body>
+
+</html>

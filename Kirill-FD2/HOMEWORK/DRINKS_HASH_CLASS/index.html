@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		class HashStorageClass {
+			constructor() {
+				this.cocktailsObj = {}
+			}
+
+			addValue(key, value) {
+				this.cocktailsObj[key] = value
+				return `Напиток "${key}" успешно добавлен!`
+			}
+
+			getValue(key) {
+				return { "Напиток": key, ...this.cocktailsObj[key] }
+			}
+
+			deleteValue(key) {
+				delete this.cocktailsObj[key]
+				return `коктейль ${key} удален из хранилища`
+			}
+
+			getKeys() {
+				return `Доступные напитки: "${Object.keys(this.cocktailsObj)}"`
+			}
+		}
+
+		const drinkStorage = new HashStorageClass()
+		drinkStorage.addValue('Wiskey Sour', { "Алкогольный": `Да`, "Ингридиенты": ["виски", "сок лимона", "сироп", "белок яйца"], "Приготовления": `Смешать все ингридиенты по 50 гр и шейкануть` })
+
+
+	</script>
+</body>
+
+</html>

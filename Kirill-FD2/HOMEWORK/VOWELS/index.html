@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+
+		const vovelArr = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+		const str = prompt('Введите строку')
+
+		result = VowelsCount(str)
+		console.log(`Количество гласных букв в строке = ${result}`)
+
+		function VowelsCount(str) {
+			let count = 0
+			for (let i = 0; i < str.length; i++) {
+				vovelArr.includes(str[i]) ? count++ : null
+			}
+
+			return count
+		}
+
+	</script>
+
+</body>
+
+</html>
