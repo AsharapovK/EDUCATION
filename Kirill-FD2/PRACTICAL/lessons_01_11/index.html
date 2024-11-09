@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+	<script>
+
+		function Countries() {
+			let self = this;
+			let DB = {};
+
+			self.setCountry = function (country, capital) {
+				DB[country] = capital
+			}
+
+			self.getCountry = function (country, capital) {
+				console.log(DB)
+			}
+
+			// self.Update = function(id, country, capital) {
+			// 	for (strana in DB) {
+			// 		if (strana === id) {
+			// 			delete DB[country]
+			// 			setCountry(country, capital)
+			// 		}
+			// 	}
+			// }
+
+
+
+		}
+
+	</script>
+
+
+</body>
+
+</html>

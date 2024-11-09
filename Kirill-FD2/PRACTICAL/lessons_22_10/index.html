@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+
+		// Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+
+
+		function sortArray(array) {
+
+			//Объявляем переменные
+			const notEvenArray = []
+			const tempArray = []
+			const resultArray = []
+
+			//Разбиваем массивы
+			for (i = 0; i < array.length; i++) {
+				if (array[i] % 2 === 0) {
+					resultArray.push(array[i])
+				}
+				else {
+					tempArray.push(array[i])
+					resultArray.push(null)
+				}
+			}
+
+			// Сортировка временного масива
+			tempArray.sort((a, b) => a - b)
+
+			// Собираем результирующий массив
+			for (i = 0, t = 0; i < resultArray.length; i++) {
+				if (resultArray[i] === null) {
+					resultArray[i] = tempArray[t]
+					t++
+				}
+			}
+
+			return resultArray
+		}
+
+
+
+		let res = sortArray([5, 8, 6, 3, 4])
+		console.log(`Итого res: ${res}`)
+
+
+
+
+		
+
+
+	</script>
+
+</body>
+
+</html>
