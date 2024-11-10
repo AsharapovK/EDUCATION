@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="function.js"></script>
+	<title>A3+</title>
+</head>
+
+<body>
+	<script>
+
+		// Для тестирования	
+		// let str = `е,м мё`
+
+		// str = replacement(prompt('Введите строку'))
+		// str = clearString(str, ` ,.!?:;ъь`)
+		str = clearString(replacement(prompt('Введите строку')), ` ,.!?:;ъь`)
+		const result = isPalindrom(str)
+		result ? console.log(`Строка "${str}" является палиндромом`) : console.log(`Строка "${str}" не является палиндромом`)
+
+	</script>
+</body>
+
+</html>
