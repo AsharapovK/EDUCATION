@@ -39,8 +39,6 @@ body {
 }
 
 .HomeWorkDiv {
-	--flow-space: 0.5em;
-  --hsl: var(--hue), var(--saturation), var(--lightness);
   border: #6c757d solid 1px;
   border-radius: 4px;
   margin: 15px 15px 15px 15px;

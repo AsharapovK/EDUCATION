@@ -1,0 +1,52 @@
+.editFlow {
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	width: 400px;
+}
+
+.impt {
+	margin: 0px 0px 0px 20px;
+	padding: 0px;
+	font-weight: bold;
+}
+
+input,
+select {
+	height: 18px;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: .5px solid gainsboro;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+}
+
+button {
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	height: 30px;
+	background-color: #f0f0f0;
+}
+
+.cardsFlow {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: start;
+	margin: 10px;
+	padding: 0px;
+}
+
+.card {
+	margin: 10px;
+}
+
+.color {
+	display: flex;
+	justify-content: start;
+}
+
+p {
+	margin: 0px 0px 0px 0px;
+}
