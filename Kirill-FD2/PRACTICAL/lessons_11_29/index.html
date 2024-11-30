@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=f, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="newYearTimer">
+		<span>До нового года осталось:</span>
+		<span class="timer"></span>
+	</div>
+
+	<script>
+
+		const timerId = setInterval(showTime, 1000)
+
+		function showTime() {
+			const newYear = new Date('2025-01-01 GMT+3 00:00:00');
+			const currDate = new Date();
+
+			const resultTime = newYear - currDate;
+			const days = Math.floor(resultTime / (1000 * 3600 * 24))
+			const hour = Math.floor((resultTime / (1000 * 3600)) % 24)
+			const min = Math.floor((resultTime / 1000 / 60) % 60)
+			const sec = Math.floor((resultTime % (1000 * 60)) / 1000)
+
+			console.log(`${days} дней, ${hour} часов, ${min} минут, ${sec} секунд`)
+
+			const timer = document.querySelector('.timer');
+			timer.innerHTML = `${days} дней, ${hour} часов, ${min} минут, ${sec} секунд`
+		}
+	</script>
+
+</body>
+
+</html>

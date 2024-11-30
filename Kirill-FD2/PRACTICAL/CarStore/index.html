@@ -27,15 +27,24 @@
 		<div class="impt"><span>Картинка: </span><input type="text" name="imgUrl" placeholder="bmw.jpg" value="img/bmw.jpg">
 		</div>
 		<div class="impt"><span>Трансмиссия: </span>
-			<select type="transmissionType" name="transmission">
+			<select class="transmissionType" aria-label="transmission">
+				<option selected>Выбери трансмиссию</option>
 				<option value="automatic">Автомат</option>
 				<option value="mechanic">Механика</option>
 				<option value="robot">Робот</option>
 			</select>
 		</div>
-
 		<div class="impt"><span></span><button onclick="addCar()">Добавить авто</button>
 		</div>
+
+		<hr>
+		<div class="filterFlow">
+			<div class="cash">
+				<label id="labelFilterCash" for="filterCash" class="form-label">Выберите стоимость</label>
+				<input type="range" class="form-range" min="10000" max="20000" step="1000" id="filterCash">
+			</div>
+		</div>
+
 	</div>
 
 	<hr>

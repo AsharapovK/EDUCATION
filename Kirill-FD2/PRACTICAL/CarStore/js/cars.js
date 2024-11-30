@@ -2,12 +2,13 @@
 const cars = [];
 
 
-
 /**
  * Функция добавления нового автомобиля
  * Получает данные из формы (инпуты и селект) и добавляет новый автомобиль в хранилище
  * @function addCar
  */
+
+
 function addCar() {
 	//Получаем данные из инпутов
 	const impitArr = document.querySelectorAll('input[name]');
@@ -23,9 +24,31 @@ function addCar() {
 	cars.push(car)
 	console.log(`Автомобиль ${impitArr[0].value} добавлен в хранилище`)
 
+	// Перебираем полученные данные и вставляем в карточку товара
+	const filterCash = document.querySelector('#filterCash')
+	const filterCahsHtml = document.querySelector('#labelFilterCash')
+
+	// Слушаем событие изменения значения инпута
+	filterCash.addEventListener('change', (e) => {
+		filterCahsHtml.innerHTML = ` ${e.target.value}$`
+		console.log(e.target.value)
+	})
+
+	
 	clearFlow()
 	renderCars()
 }
+
+
+
+
+
+
+
+
+
+
+
 
 function clearFlow() {
 	const flowDiv = document.querySelector('.cardsFlow')
