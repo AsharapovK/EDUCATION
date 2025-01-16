@@ -38,7 +38,7 @@ const html_search = `
 const html_search_false = `
 	<div class="wrapper" style="width: ${html_size.formWidth}px;height:auto;">
 		<div class="container">
-			<h2>Пусто, попробуйте еще</h2>
+			<h2>Пользователь не найден</h2>
 		</div>
 	</div>
 `;

@@ -9,13 +9,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 90vh;
 	overflow: hidden;
 }
 
 .wrapper {
-	/* width: 420px; */
-	/* min-width: 370px; */
 	background: transparent;
 	color: white;
 	border-radius: 10px;

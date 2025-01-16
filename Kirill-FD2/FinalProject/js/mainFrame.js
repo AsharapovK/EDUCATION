@@ -26,7 +26,6 @@ function buttonActivation() {
 
 	app.innerHTML = html_search;
 
-
 	// Отправка данных на сервер
 	fetch(`https://script.google.com/macros/s/AKfycbwJWWqsknLmFKL0pBPfUuIH9Yj7wsrnQMdbXS7yUgXatq8Lr0iO576MvqGnxOM4Okgl/exec?Login=${login}&Password=${password}&Action=Check`)
 		.then(response => response.json())
