@@ -3,17 +3,20 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Poppins, sans-serif;
+	overflow: hidden;
 }
 
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 90vh;
+	height: 85vh;
 	overflow: hidden;
 }
 
 .wrapper {
+
+
 	background: transparent;
 	color: white;
 	border-radius: 10px;
