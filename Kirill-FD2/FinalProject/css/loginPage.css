@@ -10,7 +10,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	/* background: url(../img/background_login.jpg) no-repeat center center fixed; */
-	min-height: 90vh;
+	height: 90vh;
 	/* background-size: cover; */
 	/* background-position: center; */
 	overflow: hidden;
