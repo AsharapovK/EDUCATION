@@ -1,14 +1,11 @@
-//Определение ширины и высоты окна
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-const conteinerWight = (screenWidth / 100) * 90;
-const conteinerHeight = (screenHeight / 100) * 95;
-
+// const html_size2 = screenSize()
+// console.log(`Подходящие размеры:${JSON.stringify(html_size2)}`)
 
 
 // Вставка HTML с логином
 const app = document.querySelector('#app');
 app.innerHTML = html_login;
+
 
 // Получаем форму и кнопку
 const form = document.querySelector('#loginForm');
@@ -17,12 +14,16 @@ form.addEventListener('submit', function (event) {
 	buttonActivation();
 });
 
+
+
 // Функция для активации кнопки или другой логики
 function buttonActivation() {
 	console.log('Форма не отправляется, кнопка активирована!');
 	const formElements = document.querySelectorAll('.logArr');
 	const login = formElements[0].value;
 	const password = formElements[1].value;
+	debugger
+
 	app.innerHTML = html_search;
 
 
@@ -32,16 +33,14 @@ function buttonActivation() {
 		.then(data => {
 			if (data.result === false) {
 				app.innerHTML = html_search_false;
+
 				setTimeout(() => {
 					app.innerHTML = html_login;
-
 					const form = document.querySelector('#loginForm');
 					form.addEventListener('submit', function (event) {
 						event.preventDefault(); // Останавливаем стандартное поведение формы
 						buttonActivation();
 					});
-
-
 				}, 2000);
 			} else if (data.result === true) {
 				userAuthorized();
@@ -58,8 +57,8 @@ function userAuthorized() {
 
 	// Меняем размер блока
 	setTimeout(() => {
-		smoothResizeElement('.wrapper_welcome', conteinerWight, conteinerHeight, 300);
-	}, 1300);
+		smoothResizeElement('.wrapper', html_size.conteinerWight, html_size.conteinerHeight, 700);
+	}, 1000);
 }
 
 

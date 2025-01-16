@@ -1,5 +1,7 @@
+const html_size = screenSize()
+
 const html_login = `
-	<div class="wrapper">
+	<div class="wrapper" style="width: ${html_size.formWidth}px;height: auto;">
 		<form id="loginForm">
 			<h1>Вход</h1>
 			<div class="input-box">
@@ -25,27 +27,28 @@ const html_login = `
 `;
 
 const html_search = `
-	<div class="wrapper_welcome">
+	<div class="wrapper" style="width: ${html_size.formWidth}px;height: auto;">
 		<div class="container">
-			<h1>Проверяем пользователя...</h1>
+			<h2>Ищем пользователя...</h2>
 		</div>
 	</div>
 `;
 
 
 const html_search_false = `
-	<div class="wrapper_welcome">
+	<div class="wrapper" style="width: ${html_size.formWidth}px;height:auto;">
 		<div class="container">
-			<h1>Не нашли. Попробуйте еще</h1>
+			<h2>Пусто, попробуйте еще</h2>
 		</div>
 	</div>
 `;
 
 
 const html_welcome = `
-	<div class="wrapper_welcome">
+	<div class="wrapper" style="width: ${html_size.formWidth}px;height:auto;">
 		<div class="container">
-			<h1>О, кажется нашли!</h1>
+			<h2>Кирилл, мы рады вас видеть!</h2>
 		</div>
 	</div>
 `;
+
