@@ -22,7 +22,6 @@ function buttonActivation() {
 	const formElements = document.querySelectorAll('.logArr');
 	const login = formElements[0].value;
 	const password = formElements[1].value;
-	debugger
 
 	app.innerHTML = html_search;
 

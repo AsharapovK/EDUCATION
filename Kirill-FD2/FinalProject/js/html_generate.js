@@ -3,7 +3,7 @@ const html_size = screenSize()
 const html_login = `
 	<div class="wrapper" style="width: ${html_size.formWidth}px;height: auto;">
 		<form id="loginForm">
-			<h1>Вход</h1>
+			<h1>Вход ${html_size.conteinerHeight}</h1>
 			<div class="input-box">
 				<input class="logArr" type="text" name="Login" placeholder="Логин" required>
 				<i class="bx bxs-user"></i>
@@ -15,7 +15,7 @@ const html_login = `
 			</div>
 
 			<div class="remember-forgot">
-				<label for=""><input type="checkbox">Запомнить меня</label>
+				<label id="remember"><input id="rememberCheck" type="checkbox">Запомнить меня</label>
 				<a href="#">Забыли пароль?</a>
 			</div>
 			<button type="submit" class="button">Войти</button>
