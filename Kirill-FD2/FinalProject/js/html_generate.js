@@ -1,7 +1,7 @@
 const html_size = screenSize()
 
 const html_login = `
-	<div class="wrapper" style="width: ${html_size.formWidth}px;height: auto;">
+	<div class="wrapper" style="width: ${html_size.formWidth}px;height: ${html_size.conteinerHeight};">
 		<form id="loginForm">
 			<h1>Вход ${html_size.conteinerHeight}</h1>
 			<div class="input-box">
