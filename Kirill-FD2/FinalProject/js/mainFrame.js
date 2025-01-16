@@ -1,7 +1,3 @@
-// const html_size2 = screenSize()
-// console.log(`Подходящие размеры:${JSON.stringify(html_size2)}`)
-
-
 // Вставка HTML с логином
 const app = document.querySelector('#app');
 app.innerHTML = html_login;
