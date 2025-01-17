@@ -19,8 +19,8 @@ window.addEventListener('load', function () {
 		invertY: false,
 		limitX: false,
 		limitY: false,
-		scalarX: 10,
-		scalarY: 10,
+		scalarX: 13,
+		scalarY: 13,
 		frictionX: 0.1,
 		frictionY: 0.1,
 		originX: 0.5,
@@ -34,3 +34,6 @@ window.addEventListener('load', function () {
 		}, true);
 	}
 });
+
+
+

@@ -52,3 +52,10 @@ const html_welcome = `
 	</div>
 `;
 
+
+// Добавляем параметры к адресной строке
+function addUrlParameters(params) {
+	const url = new URL(window.location.href);
+	Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+	window.history.pushState({}, '', url);
+}
