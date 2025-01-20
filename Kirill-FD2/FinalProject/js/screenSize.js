@@ -9,8 +9,8 @@ function screenSize() {
 	const resultObject = {
 		formWidth: formWidth,
 		formHeight: formHeight,
-		conteinerWight: (screenWidth / 100) * 90,
-		conteinerHeight: (screenHeight / 100) * 95
+		conteinerWight: (screenWidth / 100) * 98,
+		conteinerHeight: (screenHeight / 100) * 98
 	}
 
 	return resultObject

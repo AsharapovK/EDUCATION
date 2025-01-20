@@ -1,25 +1,128 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Вход</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Выпускной прокт M-FD2-145-24-</title>
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"> -->
 	<link rel="stylesheet" href="css/loginPage.css">
-	<link rel="stylesheet" href="css/welcomePage.css">
+	<link rel="stylesheet" href="css/table.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 
+
 <body>
-	<div class="wrapper_welcome">
-		<div class="container">
-			<h1>Кирилл, мы рады вас видеть!</h1>
+	<div id="app" class="mainFrame">
+		<div class="wrapper wrapper_result" style="width: 2500px; height:1200px">
+			<h2>Кирилл, мы рады вас видеть!</h2>
+			<div class="container">
+				<div id="input-container">
+					<div class="input-row input-row-50px">
+						<div class="input-box">
+							<input class="ProductArr inputRadius10" type="text" name="ProductArticle[]" placeholder="Введите Артикул"
+								required>
+						</div>
+						<div class="input-box">
+							<input class="ProductArr inputRadius10" type="text" name="ProductBrand[]" placeholder="Введите Брэнд"
+								required>
+						</div>
+						<button type="button" class="add-row">Добавить</button>
+					</div>
+				</div>
+				<!-- <div class="result-container"> -->
+				<div class="card">
+					<table>
+						<thead>
+							<tr>
+								<th> Тип детали: <span class="draggable" onmousedown="initResize(0)"></span> </th>
+								<th> Артикул: <span class="draggable" onmousedown="initResize(1)"></span> </th>
+								<th> Производитель: <span class="draggable" onmousedown="initResize(2)"></span> </th>
+								<th> Цена (₽): <span class="draggable" onmousedown="initResize(3)"></span> </th>
+								<th> Описание: <span class="draggable" onmousedown="initResize(4)"></span> </th>
+								<th> Колличество: <span class="draggable" onmousedown="initResize(5)"></span> </th>
+								<th> Доставка (дн): <span class="draggable" onmousedown="initResize(6)"></span> </th>
+								<th> Рейтинг:</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><span class="cell-content">Type 1</span></td>
+								<td><span class="cell-content">001</span></td>
+								<td><span class="cell-content">Brand A</span></td>
+								<td><span class="cell-content">1000</span></td>
+								<td><span class="cell-content">Description 1</span></td>
+								<td><span class="cell-content">10</span></td>
+								<td><span class="cell-content">5</span></td>
+								<td><span class="cell-content">4.5</span></td>
+							</tr>
+							<tr>
+								<td><span class="cell-content">Type 2</span></td>
+								<td><span class="cell-content">002</span></td>
+								<td><span class="cell-content">Brand B</span></td>
+								<td><span class="cell-content">1500</span></td>
+								<td><span class="cell-content">Description 2</span></td>
+								<td><span class="cell-content">20</span></td>
+								<td><span class="cell-content">3</span></td>
+								<td><span class="cell-content">4.7</span></td>
+							</tr>
+							<tr>
+								<td><span class="cell-content">Type 3</span></td>
+								<td><span class="cell-content">003</span></td>
+								<td><span class="cell-content">Brand C</span></td>
+								<td><span class="cell-content">2000</span></td>
+								<td><span class="cell-content">Description 3</span></td>
+								<td><span class="cell-content">15</span></td>
+								<td><span class="cell-content">7</span></td>
+								<td><span class="cell-content">4.2</span></td>
+							</tr>
+							<!-- Additional rows -->
+							<!-- Repeat pattern, ensuring unique content for each row -->
+							<tr>
+								<td><span class="cell-content">Type 4</span></td>
+								<td><span class="cell-content">004</span></td>
+								<td><span class="cell-content">Brand D</span></td>
+								<td><span class="cell-content">2500</span></td>
+								<td><span class="cell-content">Description 4</span></td>
+								<td><span class="cell-content">5</span></td>
+								<td><span class="cell-content">6</span></td>
+								<td><span class="cell-content">4.9</span></td>
+							</tr>
+							<tr>
+								<td><span class="cell-content">Type 5</span></td>
+								<td><span class="cell-content">005</span></td>
+								<td><span class="cell-content">Brand E</span></td>
+								<td><span class="cell-content">1200</span></td>
+								<td><span class="cell-content">Description 5</span></td>
+								<td><span class="cell-content">25</span></td>
+								<td><span class="cell-content">4</span></td>
+								<td><span class="cell-content">4.3</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 
+	<div id="parallax-container">
+		<div data-depth="0.007" class="parallax-layer">
+			<img src="img/background_login.jpg" alt="Background" class="parallax-image">
+		</div>
+	</div>
 
-
-
+	<script src="js/screenSize.js"></script>
+	<script src="js/html_generate.js"></script>
+	<script src="js/productRow.js"></script>
+	<script src="js/table.js"></script>
+	<!-- <script src="js/mainFrame.js"></script> -->
+	<script src="js/smoothResize.js"></script>
+	<script src="js/parallaxSetup.js"></script>
 </body>
+
 
 </html>
