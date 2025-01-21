@@ -49,7 +49,7 @@ const html_welcome = `
   <div class="container">
     <h2>Кирилл, мы рады вас видеть!</h2>
     <div id="input-container">
-      <button type="button" class="add-row">Добавить</button>
+      <button type="button" class="add-row">✙</button>
       <div class="input-row input-row-50px">
         <div class="input-box">
           <input class="ProductArr" type="text" name="ProductArticle[]" placeholder="Введите Артикул №" required>
