@@ -1,3 +1,17 @@
+//Импорт функций отображения и скрытия всплывающего окна
+
+
+
+
+
+// Если в локальной переменной нет значения то установить по умолчанию
+if (localStorage.getItem('settingRating') === null) {
+	localStorage.setItem('settingRating', 4.0);
+}
+if (localStorage.getItem('settingDelivery') === null) {
+	localStorage.setItem('settingDelivery', 6);
+}
+
 // Вставка HTML с логином
 const app = document.querySelector('#app');
 app.innerHTML = html_login;
@@ -5,8 +19,8 @@ const statUrl = new URL(location.href);
 
 // Если параметр login отсутствует, добавляем его
 if (!statUrl.href.includes('login')) {
-	history.pushState(null, null, statUrl + '?login');
 }
+
 
 
 
@@ -16,7 +30,11 @@ const loginForm = document.getElementById('loginForm');
 const rememberCheck = document.getElementById('rememberCheck');
 
 
-// Обработчик отправки формы
+/**
+ * loginForm.addEventListener('submit') - функция-обработчик события submit, которая
+ * отправляет данные на сервер, если пользователь авторизован.
+ * @param  {Event} event - событие submit
+ */
 loginForm.addEventListener('submit', function (event) {
 	event.preventDefault(); // Предотвращаем отправку формы
 
@@ -36,12 +54,20 @@ loginForm.addEventListener('submit', function (event) {
 		localStorage.removeItem('userLogin');
 		localStorage.removeItem('userPassword');
 	}
+
+	// Вызов функции buttonActivation для авторизации
 	buttonActivation();
-	console.log('Форма отправлена');
+	console.log('1. Сделан запрос на авторизацию в GoogleSheets');
 });
 
 
-// Заполняем поля, если данные уже сохранены
+
+
+
+/**
+ * Функция window.addEventListener('load') - заполняет поля, если данные уже сохранены
+ * Она срабатывает при загрузке страницы
+ */
 window.addEventListener('load', function () {
 	const savedLogin = localStorage.getItem('userLogin');
 	const savedPassword = localStorage.getItem('userPassword');
@@ -54,7 +80,14 @@ window.addEventListener('load', function () {
 });
 
 
-// Обработчик для нажатия клавиш Enter+Cntrl
+
+
+
+/**
+ * Функция обработки нажатия Ctrl+Enter.
+ * При нажатии Ctrl+Enter запускается функция sendData.
+ * @param  {object} event - объект события
+ */
 document.addEventListener('keydown', function (event) {
 	if (event.ctrlKey && event.key === 'Enter') {
 		// Запускаем функцию sendData
@@ -64,9 +97,15 @@ document.addEventListener('keydown', function (event) {
 
 
 
-// Функция для активации кнопки или другой логики
+
+
+/**
+ * Функция buttonActivation - активирует кнопку "Войти"
+ * Она отправляет данные о логине и пароле на сервер.
+ * @param  {string} login - логин пользователя
+ * @param  {string} password - пароль пользователя
+ */
 function buttonActivation() {
-	console.log('Форма не отправляется, кнопка активирована!');
 	const formElements = document.querySelectorAll('.logArr');
 	const login = formElements[0].value;
 	const password = formElements[1].value;
@@ -89,28 +128,32 @@ function buttonActivation() {
 					});
 				}, 2000);
 			} else if (data.result === true) {
-				userAuthorized();
+				const loginName = data.row[3];
+				userAuthorized(loginName);
 			}
 		})
 		.catch(error => console.error('Error:', error)); // обработка ошибок
 }
 
-// Функция успешной авторизации
-function userAuthorized() {
+
+
+
+
+/**
+ * Функция, которая будет вызвана, если авторизация прошла успешно.
+ * @param {string} loginName - имя авторизованного пользователя
+ */
+function userAuthorized(loginName) {
 	setTimeout(() => {
+		console.log('2. Авторизация успешна');
+
+		// Вставляем HTML с таблицей
+		html_welcome = html_function(loginName);
 		app.innerHTML = html_welcome;
-		// Если параметр login отсутствует, добавляем его
-		if (!statUrl.href.includes('results')) {
-			history.pushState(null, null, statUrl + '?results');
-		}
+
 
 	}, 1000);
 
 	// Меняем размер блока
 	setTimeout(() => { smoothResizeElement('.wrapper', html_size.conteinerWight, html_size.conteinerHeight, 700); }, 1000);
 }
-
-// Добавляем слушателя для изменения состояния истории
-window.onpopstate = () => {
-	console.log('Страница перезагружена');
-};

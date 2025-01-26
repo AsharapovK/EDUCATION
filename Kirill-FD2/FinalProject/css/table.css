@@ -1,8 +1,128 @@
+/* Таблица */
+
+.card table {
+	border-collapse: separate;
+	border-spacing: 0;
+	text-align: left;
+	width: 100%;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.2s ease-in, transform 0.2s ease;
+}
+
+/* Анимация таблицы */
+
+.card table.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Заголовок таблицы */
+
+.card table thead {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Ячейки заголовка */
+
+.card table th {
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	height: 40px;
+	font-weight: 500;
+	padding: 0 5px;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ячейки тела таблицы */
+
+.card table :is(td) {
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 40px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Содержимое ячейки */
+
+.card table .cell-content-start {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	translate: 0 -50%;
+}
+
+/* Центрирование содержимого */
+
+.card table .cell-content-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+/* Выделение строки */
+
+.highlight {
+	background-color: rgba(255, 255, 255, 0.1);
+	/* Зеленый с прозрачностью */
+}
+
+/* Контейнер для иконки просмотра */
+
+.cardPrewiew {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.fa-sistrix {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.1);
+		font-size: 120px;
+	}
+}
+
+/* Драггер */
+
+.card table th .draggable {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 6px;
+	cursor: col-resize;
+}
+
+/* Ресайзер */
+
+.resizer {
+	position: absolute;
+	right: -6px;
+	top: 0;
+	width: 10px;
+	height: 100%;
+	cursor: col-resize;
+	/* background: rgba(0, 0, 0, 0.8); */
+	z-index: 1;
+}
+
+/* Контейнер таблицы */
+
 .wrapper {
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
 }
+
+/* Карточка с таблицей */
 
 .card {
 	grid-column: 2;
@@ -20,131 +140,4 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	overflow-y: scroll;
 	overflow-x: hidden;
-}
-
-.card table {
-	border-collapse: separate;
-	border-spacing: 0;
-	text-align: left;
-	width: 100%;
-	overflow: hidden;
-	opacity: 0;
-	transform: translateY(10px);
-	transition: opacity 0.2s ease-in, transform 0.2s ease;
-}
-
-.card table.show {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-.card table thead {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-
-.card table th:first-child {
-	border-top-left-radius: 8px;
-	border-bottom-left-radius: 0;
-}
-
-.card table th:last-child {
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 0;
-}
-
-.card table th {
-	text-align: center;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	height: 40px;
-	font-weight: 500;
-	padding: 0 5px;
-	background: rgba(255, 255, 255, 0.6);
-	color: rgba(0, 0, 0, 0.5);
-}
-
-.card table :is(td) {
-	position: relative;
-	overflow: hidden;
-	white-space: nowrap;
-	height: 40px;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card table .cell-content-start {
-	position: absolute;
-	top: 50%;
-	left: 10px;
-	translate: 0 -50%;
-}
-
-.card table .cell-content-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-}
-
-.highlight {
-	background-color: rgba(255, 255, 255, 0.1);
-	/* Зеленый с прозрачностью */
-}
-
-.card table th .draggable {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 6px;
-	cursor: col-resize;
-}
-
-.card table td:hover .fa-brands.fa-sistrix {
-	cursor: pointer;
-}
-
-.cardPrewiew {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	.fa-sistrix {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: rgba(255, 255, 255, 0.1);
-		font-size: 120px;
-	}
-
-}
-
-
-
-
-/* table {
-	border-collapse: collapse;
-}
-
-th,
-td {
-	border: 1px solid #ccc;
-	padding: 8px;
-}
-
-th {
-	position: relative;
-} */
-
-.resizer {
-	position: absolute;
-	right: -6px;
-	top: 0;
-	width: 10px;
-	height: 100%;
-	cursor: col-resize;
-	/* background: rgba(0, 0, 0, 0.8); */
-	z-index: 1;
 }

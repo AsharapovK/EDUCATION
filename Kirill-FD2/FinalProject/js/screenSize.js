@@ -1,4 +1,7 @@
-
+/**
+ * Функция screenSize() - возвращает объект с размерами экрана и элементов
+ * @return {Object} - объект с размерами
+ */
 function screenSize() {
 
 	const screenWidth = window.innerWidth

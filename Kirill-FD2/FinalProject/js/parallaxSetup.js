@@ -1,13 +1,7 @@
-// // Инициализация Parallax.js
-// window.addEventListener('load', function () {
-// 	const parallaxContainer = document.getElementById('parallax-container');
-// 	const parallaxInstance = new Parallax(parallaxContainer, {
-// 		relativeInput: true,
-// 		clipRelativeInput: true
-// 	});
-// });
-
-
+/**
+ * Функция window.addEventListener('load') - настройка эффекта параллакса
+ * Она срабатывает при загрузке страницы
+ */
 window.addEventListener('load', function () {
 	const parallaxContainer = document.getElementById('parallax-container');
 	const parallaxInstance = new Parallax(parallaxContainer, {
@@ -26,14 +20,11 @@ window.addEventListener('load', function () {
 		originX: 0.5,
 		originY: 0.5
 	});
-	
+
 	// Включаем акселерометр
 	if (window.DeviceOrientationEvent) {
-		window.addEventListener("deviceorientation", function(event) {
+		window.addEventListener("deviceorientation", function (event) {
 			parallaxInstance.enable();
 		}, true);
 	}
 });
-
-
-

@@ -1,14 +1,18 @@
-import { processData } from './processData.js'; // Импортируем processData
+// Импорт функций
+import { processData } from './moduleJS/processData.js'; // Импортируем processData
+import { makeTableResizable } from './moduleJS/resizeColumns.js'; // Импортируем makeTableResizable
 
-window.sendData = function () {
-	const PROXY_CONFIG = {
-		host: '185.149.21.115',
-		port: 3000,
-		auth: {
-			username: 'fDY0Sb',
-			password: 'AxMElWfmKn'
-		}
-	};
+
+
+
+
+/**
+ * Функция sendData - отправляет POST-запрос на сервер, запрашивая данные из Emmex.ru API
+ * @param {object} event - объект события
+ */
+window.sendData = function (event) {
+	console.log('3. Запрашиваем данные из Emmex.ru API');
+	const url = 'http://185.231.69.224:5005/processLinks';
 
 	// Показываем всплывающее окно
 	function showLoadingPopup() {
@@ -41,6 +45,10 @@ window.sendData = function () {
 	const articleInputs = document.querySelectorAll('input[name="ProductArticle[]"]');
 	const brandInputs = document.querySelectorAll('input[name="ProductBrand[]"]');
 
+	//Получаем значения из локальных переменных
+	const rating = localStorage.getItem('settingRating') || 4.0;
+	const delivery = localStorage.getItem('settingDelivery') || 6;
+
 	const products = [];
 	for (let i = 0; i < articleInputs.length; i++) {
 		const article = articleInputs[i].value.trim();
@@ -53,8 +61,8 @@ window.sendData = function () {
 				locationId: '23606',
 				longitude: '27.5763',
 				latitude: '53.9381',
-				maxDeliveryDays: 6,
-				minRating: 4.0
+				maxDeliveryDays: delivery,
+				minRating: rating
 			});
 		}
 	}
@@ -64,19 +72,23 @@ window.sendData = function () {
 	// Показываем индикатор загрузки
 	showLoadingPopup();
 
-	// Отправка POST-запроса через axios с использованием прокси
-	axios({
-		method: 'post',
-		url: 'http://185.231.69.224:5005/processLinks',
-		data: payload,
+	// Отправка POST-запроса напрямую
+	fetch(url, {
+		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		proxy: PROXY_CONFIG
+		body: JSON.stringify(payload)
 	})
-		.then(response => {
-			console.log('Success:', response.data);
-			processData(response.data); // Здесь вызываем processData, передавая данные
+		.then(response => response.json())
+		.then(result => {
+			console.log('Success:', result);
+
+			// Здесь вызываем processData, передавая данные
+			console.log(`4. Обрабатываем данные и создаем таблицу`)
+			processData(result);
+			const table = document.getElementById('resizableTable');
+			makeTableResizable(table); // Вызываем функцию для изменения размеров таблицы
 		})
 		.catch(error => {
 			console.error('Error:', error);

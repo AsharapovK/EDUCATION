@@ -1,4 +1,10 @@
-const makeTableResizable = (table) => {
+/**
+ * Позволяет таблице изменять размер столбцов.
+ * Устанавливает ширину для каждого столбца в таблице по умолчению.
+ *
+ * @param {HTMLTableElement} table - таблица, которую нужно сделать ресайзблевой
+ */
+export function makeTableResizable(table) {
 	const rows = table.querySelectorAll('tr');
 
 	if (rows.length === 0) {
@@ -7,7 +13,6 @@ const makeTableResizable = (table) => {
 	}
 
 	const columns = rows[0].children;
-
 	if (!columns || columns.length === 0) {
 		console.error("В первой строке таблицы нет столбцов.");
 		return;
@@ -20,12 +25,12 @@ const makeTableResizable = (table) => {
 		return;
 	}
 
+
 	// Устанавливаем ширину для всех заголовков вручную
 	Array.from(columns).forEach((col, index) => {
 		col.style.width = `${columnWidths[index]}`;
 	});
 
-	console.log(`Ширина заголовков установлена вручную:`, columnWidths);
 
 	Array.from(columns).forEach((col, index) => {
 		if (index === columns.length - 1) return; // Не добавляем ресайзеры к последнему столбцу
@@ -55,4 +60,4 @@ const makeTableResizable = (table) => {
 			document.addEventListener('mouseup', onMouseUp);
 		});
 	});
-};
+}

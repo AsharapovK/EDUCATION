@@ -1,3 +1,7 @@
+/**
+ * Добавляет строку ввода артикула и бренда
+ * @function addRowButton
+ */
 addRowButton = function () {
 	const container = document.getElementById('input-container');
 	const maxRows = Math.floor(container.offsetHeight / 60);
@@ -25,6 +29,16 @@ addRowButton = function () {
 	}
 };
 
+
+
+
+
+
+/**
+ * Удаляет строку ввода артикула и бренда
+ * @function removeRow
+ * @param {HTMLElement} removeRowButton - кнопка удаления строки
+ */
 function removeRow(removeRowButton) {
 	const row = removeRowButton.closest('.input-row');
 	row.style.opacity = '0';

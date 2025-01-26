@@ -1,3 +1,8 @@
+/**
+ * Функция getEmmexProduct делает POST-запрос к серверу, передавая массив объектов с информацией о запчастях.
+ * @param {object[]} links - массив объектов с информацией о запчастях
+ * @returns {Promise<object[]>} -Promise, который решается массивом объектов с информацией о найденных запчастях
+ */
 async function getEmmexProduct(links) {
 	const url = 'http://185.231.69.224:5005/processLinks';
 
@@ -45,5 +50,3 @@ async function getEmmexProduct(links) {
 		throw error;
 	}
 }
-
-// export { getEmmexProduct };

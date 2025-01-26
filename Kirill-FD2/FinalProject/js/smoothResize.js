@@ -1,4 +1,10 @@
-
+/**
+ * Сглаженно изменяет размер элемента до указанной ширины и высоты за указанное время.
+ * @param {string} selector - CSS-селектор для элемента, который нужно изменить размер.
+ * @param {number} targetWidth - Желаемая ширина элемента.
+ * @param {number} targetHeight - Желаемая высота элемента.
+ * @param {number} duration - Продолжительность анимации изменения размера в миллисекундах.
+ */
 function smoothResizeElement(selector, targetWidth, targetHeight, duration) {
 	const element = document.querySelector(selector);
 	if (!element) return;

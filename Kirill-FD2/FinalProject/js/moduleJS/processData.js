@@ -1,4 +1,7 @@
-// Функция для обработки данных и вставки их в таблицу
+/**
+ * Функция для обработки данных и вставки их в таблицу
+ * @param {object} data - Объект с данными, полученными из Google Sheets
+ */
 export function processData(data) {
 	// Получаем элемент с классом card
 	const cardContainer = document.querySelector('.card');
@@ -66,14 +69,5 @@ export function processData(data) {
 		setTimeout(() => {
 			table.classList.add('show');
 		}, 100); // Задержка для плавного появления
-
-		// Добавляем обработчик события load для скрипта resizeColumns.js
-		const script = document.createElement('script');
-		script.src = './js/resizeColumns.js'; // Исправлен путь к файлу
-		script.onload = function () {
-			// Выполняем код после загрузки скрипта resizeColumns.js
-			console.log('resizeColumns.js loaded');
-		};
-		document.body.appendChild(script);
 	}
 }
