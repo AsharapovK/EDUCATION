@@ -1,109 +1,95 @@
-/* body {
-  background: #f4f3f6;
-  color: #616678;
-  display: grid;
-  place-items: center;
-  margin: 0;
-  height: 100vh;
-  font-family: "Euclid Circular A", "Poppins";
-} */
-
 .wrapper {
-	overflow: auto;
+	overflow: hidden;
 	position: relative;
 	z-index: 2;
 }
 
 .card {
-	background: #ffffff;
-	border-radius: 10px;
-	/* box-shadow: 0 30px 40px rgb(97 102 120 / 12%); */
-	/* padding: 24px; */
-	font-size: 14px;
-	/* width: 460px; */
-
-	height: 95%;
-	padding: 20px;
 	grid-column: 2;
 	grid-row: 1;
+	background: #ffffff;
+	border-radius: 10px;
+	font-size: 14px;
+	height: 95%;
 	margin: 0px 0px 0px 10px;
 	background: rgba(255, 255, 255, 0.1);
 	color: white;
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(100px);
-	/* Увеличено размытие для более мягкого эффекта */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
-.card header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: 0 0 18px;
-}
-
-.card header button {
-	font-family: inherit;
-	background: #9159fe;
-	color: #f9f9f9;
-	border: 0;
-	border-radius: 20px;
-	padding: 6px 16px 6px 12px;
-	font-size: 12.5px;
-	display: flex;
-	align-items: center;
-
-	gap: 4px;
-}
-
-.card header button span {
-	font-size: 16px;
-	translate: 0 -0.5px;
-}
-
-.card h2 {
-	font-size: 16px;
-	font-weight: 400;
-}
-
 .card table {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
 	text-align: left;
 	width: 100%;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.2s ease-in, transform 0.2s ease;
+}
+
+.card table.show {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .card table thead {
-	position: sticky;
+	position: relative;
 	top: 0;
 	left: 0;
 	z-index: 1;
 }
 
-.card table th {
-	font-weight: 400;
-	padding: 0 10px;
-	user-select: none;
-	text-transform: capitalize;
-	background: #f4f3f6;
-	color: rgb(97 102 120 / 75%);
+.card table th:first-child {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 0;
 }
 
-.card table :is(th, td) {
+.card table th:last-child {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 0;
+}
+
+.card table th {
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	height: 40px;
+	font-weight: 500;
+	padding: 0 5px;
+	background: rgba(255, 255, 255, 0.6);
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.card table :is(td) {
 	position: relative;
 	overflow: hidden;
 	white-space: nowrap;
-	height: 32px;
+	height: 40px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.card table .cell-content {
+.card table .cell-content-start {
 	position: absolute;
 	top: 50%;
 	left: 10px;
 	translate: 0 -50%;
+}
+
+.card table .cell-content-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.highlight {
+	background-color: rgba(255, 255, 255, 0.1);
+	/* Зеленый с прозрачностью */
 }
 
 .card table th .draggable {
@@ -113,4 +99,52 @@
 	bottom: 0;
 	width: 6px;
 	cursor: col-resize;
+}
+
+.card table td:hover .fa-brands.fa-sistrix {
+	cursor: pointer;
+}
+
+.cardPrewiew {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.fa-sistrix {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.1);
+		font-size: 120px;
+	}
+
+}
+
+
+
+
+/* table {
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 1px solid #ccc;
+	padding: 8px;
+}
+
+th {
+	position: relative;
+} */
+
+.resizer {
+	position: absolute;
+	right: -6px;
+	top: 0;
+	width: 10px;
+	height: 100%;
+	cursor: col-resize;
+	/* background: rgba(0, 0, 0, 0.8); */
+	z-index: 1;
 }

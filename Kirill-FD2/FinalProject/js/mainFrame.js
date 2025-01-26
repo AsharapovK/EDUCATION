@@ -1,6 +1,14 @@
 // Вставка HTML с логином
 const app = document.querySelector('#app');
 app.innerHTML = html_login;
+const statUrl = new URL(location.href);
+
+// Если параметр login отсутствует, добавляем его
+if (!statUrl.href.includes('login')) {
+	history.pushState(null, null, statUrl + '?login');
+}
+
+
 
 
 // Получаем форму и элементы управления
@@ -46,6 +54,16 @@ window.addEventListener('load', function () {
 });
 
 
+// Обработчик для нажатия клавиш Enter+Cntrl
+document.addEventListener('keydown', function (event) {
+	if (event.ctrlKey && event.key === 'Enter') {
+		// Запускаем функцию sendData
+		sendData();
+	}
+});
+
+
+
 // Функция для активации кнопки или другой логики
 function buttonActivation() {
 	console.log('Форма не отправляется, кнопка активирована!');
@@ -79,10 +97,20 @@ function buttonActivation() {
 
 // Функция успешной авторизации
 function userAuthorized() {
-	setTimeout(() => { app.innerHTML = html_welcome; }, 1000);
+	setTimeout(() => {
+		app.innerHTML = html_welcome;
+		// Если параметр login отсутствует, добавляем его
+		if (!statUrl.href.includes('results')) {
+			history.pushState(null, null, statUrl + '?results');
+		}
+
+	}, 1000);
 
 	// Меняем размер блока
 	setTimeout(() => { smoothResizeElement('.wrapper', html_size.conteinerWight, html_size.conteinerHeight, 700); }, 1000);
 }
 
-
+// Добавляем слушателя для изменения состояния истории
+window.onpopstate = () => {
+	console.log('Страница перезагружена');
+};

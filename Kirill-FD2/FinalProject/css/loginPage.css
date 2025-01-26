@@ -16,6 +16,7 @@ body {
 }
 
 .wrapper {
+	overflow: hidden;
 	background: transparent;
 	color: white;
 	border-radius: 10px;
@@ -60,7 +61,7 @@ body {
 	border-radius: 40px;
 	font-size: 16px;
 	color: #fff;
-	padding: 20px 45px 20px 20px;
+	padding: 20px 10px;
 }
 
 .inputRadius10 {
@@ -207,8 +208,6 @@ button {
 	transition-property: background-color, border-color, color;
 }
 
-
-
 /* Стилизация контейнеров запроса деталей и выдачи деталей */
 .container {
 	padding: 20px;
@@ -232,6 +231,11 @@ button {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+
+input::placeholder {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
 
 /* Результирующий контейнер */
 .result-container {
@@ -258,35 +262,35 @@ button {
 
 /* Кнопки полей ввода (Удалить) и (Добавить) */
 .add-row {
+
 	width: 8% !important;
 	font-size: 16px !important;
 	color: rgba(255, 255, 255, 0.7);
 }
 
 .add-row:hover {
-	color: rgba(0, 255, 0, 0.8);
-	transform: scale(1.3) rotate(-90deg);
+	color: rgba(255, 255, 255, 1);
+	transform: scale(1.3);
 	transition: all 0.5s;
 }
 
 .remove-row {
 	width: 8% !important;
-	font-size: 14px !important;
+	font-size: 16px !important;
 	color: rgba(255, 255, 255, 0.3);
-	/* transform: rotate(45deg); */
 }
 
 .remove-row:hover {
-	color: rgba(255, 0, 0, 0.6);
-	transform: scale(1.3) rotate(-90deg);
-	transition: all 0.2s;
+	color: rgba(255, 255, 255, 1);
+	transform: scale(1.3);
+	transition: all 0.3s;
 }
 
 
 
 /* Анимация добавления новых строк */
 .fade-in {
-	animation: fadeIn 0.2s ease-out;
+	animation: fadeIn 0.1s ease-out;
 }
 
 @keyframes fadeIn {
@@ -298,5 +302,69 @@ button {
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+
+.profile_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 40px;
+	font-size: 175%;
+
+}
+
+.profile_container .play {
+	width: 15%;
+	display: flex;
+	align-items: center;
+
+	.playText {
+		font-size: 60%;
+		margin-left: 20px;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	i {
+		cursor: pointer;
+	}
+}
+
+.profile_container .profile {
+	width: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+
+	.ProfileText {
+		/* cursor: pointer; */
+		font-size: 60%;
+		margin-right: 20px;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	i {
+		cursor: pointer;
+	}
+}
+
+
+
+.container_search {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	div>i {
+		font-size: 175%;
+		margin: 0 0 20px 0;
+
+	}
+
+	div>h3 {
+		margin: 0 0 20px 0;
+		font-size: 100%;
 	}
 }
