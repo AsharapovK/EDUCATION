@@ -9,6 +9,20 @@
 	font-family: Poppins, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+.wrapper.wrapper_result::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
 /* Тело */
 
 body {
@@ -35,6 +49,12 @@ body {
 	opacity: 0;
 	transform: translateY(50px);
 	animation: fadeInUp 1s forwards;
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	/* flex-wrap: nowrap; */
+
 }
 
 /* Заголовок */
@@ -42,6 +62,10 @@ body {
 .wrapper h1 {
 	font-size: 36px;
 	text-align: center;
+}
+
+#disableText {
+	display: none;
 }
 
 .wrapper h2 {
@@ -233,7 +257,8 @@ button {
 }
 
 #input-container {
-	height: 95%;
+	/* height: 95%; */
+	min-height: 153px;
 	padding: 20px;
 	grid-column: 1;
 	grid-row: 1;
@@ -241,7 +266,7 @@ button {
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	background: rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 }
 
@@ -252,7 +277,7 @@ input::placeholder {
 /* Контейнер результатов */
 
 .result-container {
-	height: 95%;
+	/* height: 95%; */
 	padding: 20px;
 	grid-column: 2;
 	grid-row: 1;
@@ -426,5 +451,6 @@ input::placeholder {
 	color: #fff;
 	font-size: 22px;
 	padding: 10px;
-	
+
 }
+

@@ -1,9 +1,7 @@
 // Импорт функций
 import { processData } from './moduleJS/processData.js'; // Импортируем processData
 import { makeTableResizable } from './moduleJS/resizeColumns.js'; // Импортируем makeTableResizable
-
-
-
+import { offerKeyHandler } from './moduleJS/offerKeyHandler.js'; // Импортируем offerKeyHandler
 
 
 /**
@@ -11,6 +9,11 @@ import { makeTableResizable } from './moduleJS/resizeColumns.js'; // Импор�
  * @param {object} event - объект события
  */
 window.sendData = function (event) {
+
+	// Запуск звука из папки mp3
+	audio.play();
+
+
 	console.log('3. Запрашиваем данные из Emmex.ru API');
 	const url = 'http://185.231.69.224:5005/processLinks';
 
@@ -86,7 +89,12 @@ window.sendData = function (event) {
 
 			// Здесь вызываем processData, передавая данные
 			console.log(`4. Обрабатываем данные и создаем таблицу`)
-			processData(result);
+			processData(result); //Обработка и вывод в таблицу
+			offerKeyHandler(); //Обработка иконок в таблице
+			// Запуск звука из папки mp3
+			const audio = new Audio('mp3/tonkiy-metallicheskiy-zvuk.mp3');
+			audio.volume = 0.1;
+			audio.play();
 			const table = document.getElementById('resizableTable');
 			makeTableResizable(table); // Вызываем функцию для изменения размеров таблицы
 		})

@@ -1,7 +1,8 @@
 //Импорт функций отображения и скрытия всплывающего окна
-
-
-
+const audio = new Audio('mp3/click.mp3');
+audio.volume = 0.1;
+const audio2 = new Audio('mp3/welcome2.mp3');
+audio2.volume = 0.1;
 
 
 // Если в локальной переменной нет значения то установить по умолчанию
@@ -12,13 +13,29 @@ if (localStorage.getItem('settingDelivery') === null) {
 	localStorage.setItem('settingDelivery', 6);
 }
 
+
 // Вставка HTML с логином
 const app = document.querySelector('#app');
-app.innerHTML = html_login;
-const statUrl = new URL(location.href);
+const hashKey = (Math.random() * 100000000000000000);
+console.log(`hashKey = ${hashKey}`);
+// app.innerHTML = html_login;
 
-// Если параметр login отсутствует, добавляем его
-if (!statUrl.href.includes('login')) {
+
+loadLogin()
+// Если хэш содержит логин или пустой, то загружаем HTML авторизации
+function loadLogin() {
+	const pageHash = window.location.hash;
+	if (pageHash === '#login' || pageHash === '') {
+		if (!location.hash.includes('login')) {
+			window.location.hash = '#login';
+		}
+	}
+	const newHash = window.location.hash;
+	if (newHash !== `#authorization=${hashKey}` && newHash !== '#login') {
+		window.location.hash = '#login';
+		location.reload();
+	}
+	else app.innerHTML = html_login;
 }
 
 
@@ -37,7 +54,7 @@ const rememberCheck = document.getElementById('rememberCheck');
  */
 loginForm.addEventListener('submit', function (event) {
 	event.preventDefault(); // Предотвращаем отправку формы
-
+	audio.play();
 
 	// Получаем значения логина и пароля
 	const login = loginForm.Login.value;
@@ -82,23 +99,6 @@ window.addEventListener('load', function () {
 
 
 
-
-/**
- * Функция обработки нажатия Ctrl+Enter.
- * При нажатии Ctrl+Enter запускается функция sendData.
- * @param  {object} event - объект события
- */
-document.addEventListener('keydown', function (event) {
-	if (event.ctrlKey && event.key === 'Enter') {
-		// Запускаем функцию sendData
-		sendData();
-	}
-});
-
-
-
-
-
 /**
  * Функция buttonActivation - активирует кнопку "Войти"
  * Она отправляет данные о логине и пароле на сервер.
@@ -129,7 +129,11 @@ function buttonActivation() {
 				}, 2000);
 			} else if (data.result === true) {
 				const loginName = data.row[3];
-				userAuthorized(loginName);
+				// userAuthorized(loginName);
+
+				window.location.hash = `#authorization=${hashKey}`;
+
+				chekAHash(loginName)
 			}
 		})
 		.catch(error => console.error('Error:', error)); // обработка ошибок
@@ -144,16 +148,83 @@ function buttonActivation() {
  * @param {string} loginName - имя авторизованного пользователя
  */
 function userAuthorized(loginName) {
+	// Вставляем HTML с таблицей
 	setTimeout(() => {
 		console.log('2. Авторизация успешна');
-
-		// Вставляем HTML с таблицей
 		html_welcome = html_function(loginName);
 		app.innerHTML = html_welcome;
-
-
+		audio2.play();
 	}, 1000);
 
 	// Меняем размер блока
 	setTimeout(() => { smoothResizeElement('.wrapper', html_size.conteinerWight, html_size.conteinerHeight, 700); }, 1000);
+	createResizeHandler();
 }
+
+
+
+
+/**
+ * Функция обработки нажатия Ctrl+Enter.
+ * При нажатии Ctrl+Enter запускается функция sendData.
+ * @param  {object} event - объект события
+ */
+document.addEventListener('keydown', function (event) {
+	if (event.ctrlKey && event.key === 'Enter') {
+		// Запускаем функцию sendData
+		sendData();
+	}
+});
+
+
+
+
+
+
+
+
+function createResizeHandler() {
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+	function handleResize() {
+		const newWidth = window.innerWidth;
+		const newHeight = window.innerHeight;
+
+
+		if (newWidth !== width || newHeight !== height) {
+			width = newWidth;
+			height = newHeight;
+
+			setTimeout(() => {
+				smoothResizeElement('.wrapper', width - 30, height - 30, 400);
+				// // Создаем вибрацию на телефоне
+				navigator.vibrate(100);
+			}, 0);
+		}
+	}
+
+	// Добавляем слушатель события resize
+	window.addEventListener('resize', handleResize);
+
+	// Вызываем функцию при загрузке страницы, чтобы получить начальные размеры
+	handleResize();
+}
+
+
+
+function chekAHash(loginName) {
+	// Добавляем слушатель события hashchange
+	window.addEventListener('hashchange', () => {
+		const newHash = window.location.hash;
+
+		if (newHash === `#authorization=${hashKey}`) {
+			// location.reload();
+			userAuthorized(loginName);
+		}
+		else app.innerHTML = html_login;
+	});
+}
+
+
+

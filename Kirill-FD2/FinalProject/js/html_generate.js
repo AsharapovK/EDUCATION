@@ -5,12 +5,12 @@ const html_login = `
 		<form id="loginForm">
 			<h1>Вход</h1>
 			<div class="input-box">
-				<input class="logArr" type="text" name="Login" placeholder="Логин" required>
+				<input class="logArr" type="text" name="Login" placeholder="Логин" required autocomplete="username">
 				<i class="bx bxs-user"></i>
 			</div>
 
 			<div class="input-box">
-				<input class="logArr" type="password" name="Password" placeholder="Пароль" required>
+				<input class="logArr" type="password" name="Password" placeholder="Пароль" required autocomplete="password">
 				<i class="bx bxs-lock-alt"></i>
 			</div>
 
@@ -48,31 +48,40 @@ const html_search_false = `
 function html_function(loginName) {
 	const html_welcome = `
 	<div class="wrapper wrapper_result" style="width: ${html_size.formWidth}px; height:${html_size.formHeight}px">
-		<div class="profile_container" >
-			<div class="play"><i class="fa-solid fa-play fa-beat" onclick="sendData()"></i><span id="playText" class="playText">Ctrl+Enter</span>
+		<h2 id="disableText">Анализ конкурентных позиций Emex.ru</h2>
+		<div class="profile_container">
+			<div class="play">
+				<i class="fa-solid fa-play fa-beat" onclick="sendData()"></i>
+				<span id="playText" class="playText">Ctrl+Enter</span>
 			</div>
-			<h2>Анализ конкурентных позиций Emex.ru</h2>
-			<div class="profile"><span class="ProfileText">${loginName}</span><i onclick="showProfilePopup()" class="fa-solid fa-user-gear"></i></div>
+			<h2 id="enableText">Анализ конкурентных позиций Emex.ru</h2>
+			<div class="profile">
+				<span class="ProfileText">${loginName}</span>
+				<i onclick="showProfilePopup()" class="fa-solid fa-user-gear"></i>
+			</div>
 		</div>
 		<div class="container">
 			<div id="input-container">
 				<div class="input-row input-row-50px">
 					<div class="input-box">
-						<input class="ProductArr inputRadius10" type="text" name="ProductArticle[]" placeholder="Введите Артикул"
-							value="CUK2533-2" required>
+						<input class="ProductArr inputRadius10" type="text" name="ProductArticle[]" autocomplete="detail"
+							placeholder="Введите Артикул" value="CUK2533-2" required>
 					</div>
 					<div class="input-box">
-						<input class="ProductArr inputRadius10" type="text" name="ProductBrand[]" placeholder="Введите Брэнд"
-							value="MANN" required>
+						<input class="ProductArr inputRadius10" type="text" name="ProductBrand[]" autocomplete="brand"
+							placeholder="Введите Брэнд" value="MANN" required>
 					</div>
-					<button type="button" class="add-row" onclick="addRowButton()"><i class="fa-regular fa-square-plus"></i></button>
+					<button type="button" class="add-row" onclick="addRowButton()">
+						<i class="fa-regular fa-square-plus"></i>	
+					</button>
 				</div>
 			</div>
 			<div class="card">
-				<div class="cardPrewiew"><i class="fa-brands fa-sistrix"></i></div>
+				<div class="cardPrewiew">
+					<i class="fa-brands fa-sistrix"></i>
+				</div>
 			</div>
 		</div>
-		<!-- </div> -->
 	</div>
 `;
 

@@ -1,0 +1,82 @@
+/* Изменения заголовка  */
+
+@media (max-width: 1150px) {
+	.wrapper {
+		.profile_container {
+			h2 {
+				font-size: clamp(1.5rem, 2.5vw, 5rem);
+			}
+		}
+	}
+}
+
+/* Изменения расположения заголовка, профиля, управления  */
+
+@media (max-width: 1000px) {
+
+	.container {
+		height: 95%;
+	}
+
+	#disableText {
+		display: block;
+		padding: 0 5px 20px 5px;
+		font-size: clamp(1.5rem, 2.5vw, 5rem);
+
+	}
+
+	#enableText {
+		display: none;
+	}
+}
+
+
+
+@media (max-width: 900px) {
+
+	.wrapper {
+		.container {
+			grid-template-columns: 1fr;
+			grid-template-rows: 2fr 10fr;
+
+			#input-container {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			.card {
+				grid-column: 1;
+				grid-row: 2;
+			}
+		}
+
+	}
+}
+
+
+
+@media (max-width: 500px) {
+	.profile_container {
+		font-size: clamp(1.5rem, 2.5vw, 5rem);
+
+		#playText {
+			display: none;
+		}
+
+		.ProfileText {
+			display: none;
+		}
+	}
+
+	#cell1,
+	#cell2,
+	#cell3,
+	#cell5 {
+		display: none;
+	}
+
+	.container {
+		grid-template-rows: 2fr 10fr 0.7fr;
+	}
+
+}

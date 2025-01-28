@@ -11,15 +11,15 @@ export function processData(data) {
             <table class="dragtable" id="resizableTable">
                 <thead>
                     <tr>
-                        <th>Тип:</th>
-                        <th>Артикул:</th>
-                        <th>Брэнд:</th>
-                        <th>Поставщик:</th>
-                        <th>Описание:</th>
-                        <th>Цена:</th>
-                        <th>Кол-во:</th>
-                        <th>Доставка:</th>
-                        <th>Рейтинг:</th>
+                        <th id="cell1" >Тип:</th>
+                        <th id="cell2" >Артикул:</th>
+                        <th id="cell3" >Брэнд:</th>
+                        <th id="cell4" >Поставщик:</th>
+                        <th id="cell5" >Описание:</th>
+                        <th id="cell6" >Цена:</th>
+                        <th id="cell7" >Кол-во:</th>
+                        <th id="cell8" >Доставка:</th>
+                        <th id="cell9" >Рейтинг:</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +27,15 @@ export function processData(data) {
 
 		// Вставляем данные в таблицу
 		data.results.forEach(result => {
+			// Вставляем строку с информацией о детали
+			const detailRow = document.createElement('tr');
+			detailRow.innerHTML = `
+                    <td colspan="9" style="text-align: center; font-weight: 700;">
+                       ${result.params.searchString.toUpperCase()} - ${result.params.make.toUpperCase()}
+                    </td>
+            `;
+			cardContainer.querySelector('tbody').appendChild(detailRow);
+
 			// Вставляем данные в таблицу
 			result.data.forEach(item => {
 				const row = document.createElement('tr');
@@ -38,14 +47,14 @@ export function processData(data) {
 
 				row.innerHTML = `
 								<tr>
-                    <td><span class="cell-content-center">Оригинал</span></td>
-                    <td><span class="cell-content-center">${item.detailNum}</span></td>
-                    <td><span class="cell-content-center">${item.make}</span></td>
-                    <td><span class="cell-content-center">${item.PriceLogo ? item.PriceLogo : '<i class="fa-regular fa-circle-question"></i>'}</span></td>
-                    <td><span class="cell-content-start">${item.name}</span></td>
-                    <td><span class="cell-content-center">${item.price}</span></td>
-                    <td><span class="cell-content-center">${item.quantity}</span></td>
-                    <td><span class="cell-content-center">${item.delivery}</span></td>
+                    <td id="cell1"><span class="cell-content-center" >Оригинал</span></td>
+                    <td id="cell2"><span class="cell-content-center" >${item.detailNum}</span></td>
+                    <td id="cell3"><span class="cell-content-center" >${item.make}</span></td>
+                    <td id="cell4" data_offerKey="${item.offerKey}"><span class="cell-content-center" >${item.PriceLogo ? item.PriceLogo : '<i class="fa-regular fa-circle-question"></i>'}</span></td>
+                    <td id="cell5"><span class="cell-content-start" >${item.name}</span></td>
+                    <td id="cell6"><span class="cell-content-center" >${item.price} ₽</span></td>
+                    <td id="cell7"><span class="cell-content-center" >${item.quantity} шт.</span></td>
+                    <td id="cell8"><span class="cell-content-center" >${item.delivery} дн.</span></td>
                     <td><span class="cell-content-center">${item.rating}</span></td>
 								</tr>
                 `;

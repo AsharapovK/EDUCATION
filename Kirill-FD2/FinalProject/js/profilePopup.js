@@ -5,6 +5,7 @@ let isPopupOpen = false;
  * с настройками фильтрации запросов
  */
 window.showProfilePopup = function () {
+	audio.play();
 	if (!isPopupOpen) {
 		isPopupOpen = true;
 		const popup = document.createElement('div');
@@ -58,6 +59,7 @@ window.showProfilePopup = function () {
  * Функция window.hideProfilePopup() - скрывает всплывающее окно
  */
 window.hideProfilePopup = function () {
+	audio.play();
 	const popup = document.getElementById('loading-popup');
 	if (popup) {
 		document.body.removeChild(popup);
